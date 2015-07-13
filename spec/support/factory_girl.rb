@@ -11,7 +11,7 @@ FactoryGirl.define do
     factory :workout do
       sequence(:name) { |n| "Workout ##{n}" }
       description "Created today this new great workout"
-      user
+      user_id 1
     end
   end
 end
