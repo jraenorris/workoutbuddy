@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="small-4 small-centered column fill-form">
+    <%= form_for @workout do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <%= f.submit "Submit Changes"%>
+    <% end %>
+  </div>
+</div>
