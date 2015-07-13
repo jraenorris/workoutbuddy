@@ -1,28 +1,24 @@
-== README
+![Build Status](https://codeship.com/projects/22fb9240-0ba7-0133-8b96-265ef25499ca/status?branch=master)
+![Code Climate](https://codeclimate.com/github/jraenorris/workoutbuddy.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Do you find going to the gym overwhelming? Do you ever find yourself staring at
+the weights wondering which ones to pick up and put down a few times to get that
+healthy physique you've always wanted? Do you need some help organizing your
+exercises so you can get the full-body (or focused!) workout you so desire?
 
-Things you may want to cover:
+Well, look no further, my friend, WorkOutBuddy is here to help!
 
-* Ruby version
+I too struggled with going to the gym and spending 45 minutes laying on the yoga
+mat wondering what I should do to get healthy. It's not that I didn't know how
+to workout, it's that I would get distracted and overstimulated by all of the
+machines and techniques to stick to a focused routine that would give me lasting
+results.
 
-* System dependencies
+Now, with the help of WorkOutBuddy, I can design a workout and set goals for
+myself when I have a few spare moments on my computer or phone, then implement
+that workout the next time I am at a park or the gym.
 
-* Configuration
+Feeling lost at the gym is a thing of the past with WorkOutBuddy helping you
+plan ahead your path to getting healthy!
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Developed by Jesse Norris
