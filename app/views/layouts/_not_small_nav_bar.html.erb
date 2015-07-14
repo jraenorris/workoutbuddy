@@ -1,0 +1,24 @@
+<nav id="menu" role="navigation" class="hide-for-small top-bar">
+  <section class="top-bar-section title-area">
+    <ul class="right">
+      <%- if current_user -%>
+        <li><%= link_to "See Your Workouts", workouts_path %></li>
+        <li><%= link_to "Create New Workout", new_workout_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <ul>
+        <dl class="tabs five-up nav-bottom">
+            <% if will_show_nav_items_for?("show", "workouts") || will_show_nav_items_for?("edit", "workouts")%>
+              <dd class=<%= class_active("show", "workouts") %>><%= link_to "Details", workout_path(@workout) %></dd>
+              <dd class=<%= class_active("edit", "workouts") %>><%= link_to "Edit", edit_workout_path(@workout) %></dd>
+              <dd><%= link_to 'Delete',  workout_path(@workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %></dd>
+            <% end %>
+        </dl>
+      </ul>
+      <%- else -%>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <%- end -%>
+    </ul>
+  </section>
+</nav>

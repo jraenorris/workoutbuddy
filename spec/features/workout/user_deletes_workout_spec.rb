@@ -22,9 +22,9 @@ feature 'user deletes a workout they created', %{
       visit workouts_path
 
       click_link workout.name
-      click_link "Edit Workout"
-
-      click_button "Delete Workout"
+      within(".hide-for-small") do
+        click_link "Delete"
+      end
 
       expect(page).to have_content("Deleted")
       expect(page).to_not have_content(workout.name)
@@ -36,7 +36,7 @@ feature 'user deletes a workout they created', %{
       visit workout_path(workout)
 
       expect(page).to have_content("Only workouts you created are viewable")
-      expect(page).to_not have_content("Delete Workout")
+      expect(page).to_not have_content("Delete")
     end
   end
 
