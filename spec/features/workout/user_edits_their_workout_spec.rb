@@ -23,8 +23,10 @@ feature 'user edits details of a created workout', %{
 
       visit workout_path(workout)
 
-      click_link "Edit Workout"
-
+      within(".hide-for-small") do
+        click_link "Edit"
+      end
+      
       fill_in "Description", with: "This workout has been replaced by Workout 3"
 
       click_button "Submit Changes"
@@ -38,7 +40,9 @@ feature 'user edits details of a created workout', %{
 
       visit workout_path(workout)
 
-      click_link "Edit Workout"
+      within(".hide-for-small") do
+        click_link "Edit"
+      end
 
       fill_in "Name", with: ""
 
@@ -55,7 +59,7 @@ feature 'user edits details of a created workout', %{
       visit workout_path(workout)
 
       expect(page).to have_content("Only workouts you created are viewable")
-      expect(page).to_not have_content("Edit Workout")
+      expect(page).to_not have_content("Edit")
     end
 
     scenario "user cannot see edit page" do
@@ -63,8 +67,8 @@ feature 'user edits details of a created workout', %{
 
       visit edit_workout_path(workout)
 
-      expect(page).to have_content("You may only edit workouts you created")
-      expect(page).to_not have_content("Edit Workout")
+      expect(page).to have_content("Only workouts you created are viewable")
+      expect(page).to_not have_content("Edit")
     end
   end
 
@@ -72,7 +76,7 @@ feature 'user edits details of a created workout', %{
     scenario "user navigates to edit page " do
       visit workout_path(workout)
 
-      expect(page).to_not have_content("Edit Workout")
+      expect(page).to_not have_content("Edit")
     end
   end
 end

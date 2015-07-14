@@ -7,10 +7,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
-    if @workout.user != current_user
-      flash[:notice] = "Only workouts you created are viewable"
-      redirect_to workouts_path
-    end
+    not_user_redirect
   end
 
   def new
@@ -31,18 +28,12 @@ class WorkoutsController < ApplicationController
 
   def edit
     @workout = Workout.find(params[:id])
-    if @workout.user != current_user
-      flash[:notice] = "You may only edit workouts you created"
-      redirect_to workouts_path
-    end
+    not_user_redirect
   end
 
   def update
     @workout = Workout.find(params[:id])
-    if @workout.user != current_user
-      flash[:notice] = "You may only edit workouts you created"
-      redirect_to workouts_path
-    end
+    not_user_redirect
     if @workout.update_attributes(workout_params)
       flash[:success] = 'Changes saved successfully'
       redirect_to workout_path(@workout)
@@ -56,6 +47,13 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id]).destroy
     flash[:success] = "Deleted"
     redirect_to workouts_path
+  end
+
+  def not_user_redirect
+    if @workout.user != current_user
+      flash[:notice] = "Only workouts you created are viewable and/or editable"
+      redirect_to workouts_path
+    end
   end
 
   private
