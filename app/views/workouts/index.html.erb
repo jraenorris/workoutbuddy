@@ -1,0 +1,16 @@
+<% if @workouts.empty? %>
+  You have no workouts. <%= link_to "Click here", new_workout_path %> to create one!
+<% else %>
+  <table>
+    <tr>
+      <th>Workout</th>
+      <th>Description</th>
+    </tr>
+    <% @workouts.each do |workout| %>
+      <tr>
+        <td><%= link_to "#{workout.name}", workout_path(workout) %></td>
+        <td><%= truncate("#{workout.description}", length: 25, separator: ' ') %></td>
+      </tr>m 6
+    <% end %>
+  </table>
+<% end %>

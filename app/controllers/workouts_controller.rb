@@ -2,11 +2,15 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts
   end
 
   def show
     @workout = Workout.find(params[:id])
+    if @workout.user != current_user
+      flash[:notice] = "Only workouts you created are viewable"
+      redirect_to workouts_path
+    end
   end
 
   def new
@@ -27,10 +31,18 @@ class WorkoutsController < ApplicationController
 
   def edit
     @workout = Workout.find(params[:id])
+    if @workout.user != current_user
+      flash[:notice] = "You may only edit workouts you created"
+      redirect_to workouts_path
+    end
   end
 
   def update
     @workout = Workout.find(params[:id])
+    if @workout.user != current_user
+      flash[:notice] = "You may only edit workouts you created"
+      redirect_to workouts_path
+    end
     if @workout.update_attributes(workout_params)
       flash[:success] = 'Changes saved successfully'
       redirect_to workout_path(@workout)
@@ -39,6 +51,13 @@ class WorkoutsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @workout = Workout.find(params[:id]).destroy
+    flash[:success] = "Deleted"
+    redirect_to workouts_path
+  end
+
   private
 
   def workout_params

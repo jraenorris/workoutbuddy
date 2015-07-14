@@ -7,14 +7,14 @@ feature 'user edits details of a created workout', %{
 } do
 
   # Acceptance Criteria
-  # [] Authenticated user can go to show page and see edit button
-  # [] Authenticated user that was not the creator cannot see edit button
-  # [] Unauthenticate user can go to show page but not see edit button
-  # [] User can validly edit the workout information and get a success flash
-  # [] If user submits invalid information they are given errors
+  # [x] Authenticated user can go to show page and see edit button
+  # [x] Authenticated user that was not the creator cannot see edit button
+  # [x] Unauthenticate user can go to show page but not see edit button
+  # [x] User can validly edit the workout information and get a success flash
+  # [x] If user submits invalid information they are given errors
 
   let!(:user) { FactoryGirl.create(:user) }
-  let!(:user2) { FactoryGirl.create(:user, id: (user.id + 1)) }
+  let!(:user2) { FactoryGirl.create(:user) }
   let!(:workout) { FactoryGirl.create(:workout, user_id: user.id) }
 
   context "authenticated user" do
@@ -46,12 +46,24 @@ feature 'user edits details of a created workout', %{
 
       expect(page).to have_content("Name can't be blank")
     end
+  end
 
-    scenario "user tries to update a workout they didn't create" do
+  context "authenticated user tries to update workout they didn't create" do
+    scenario "user cannot see show page to edit" do
       sign_in_as(user2)
 
       visit workout_path(workout)
 
+      expect(page).to have_content("Only workouts you created are viewable")
+      expect(page).to_not have_content("Edit Workout")
+    end
+
+    scenario "user cannot see edit page" do
+      sign_in_as(user2)
+
+      visit edit_workout_path(workout)
+
+      expect(page).to have_content("You may only edit workouts you created")
       expect(page).to_not have_content("Edit Workout")
     end
   end
