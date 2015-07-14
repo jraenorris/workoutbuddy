@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
@@ -26,11 +26,14 @@
     </section>
   </nav>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+
+  <div id="notice_wrapper">
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <p class="notice"><%= value %></p>
+      </div>
+    <%- end -%>
+  </div>
 
   <%= yield %>
 

@@ -1,0 +1,5 @@
+<h1><%= @workout.name %></h1>
+<p><%= @workout.description %></p>
+<% if @workout.user == current_user %>
+  <%= link_to "Edit Workout", edit_workout_path(@workout) %>
+<% end %>
