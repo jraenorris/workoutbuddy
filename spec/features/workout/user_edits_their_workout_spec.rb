@@ -26,7 +26,7 @@ feature 'user edits details of a created workout', %{
       within(".hide-for-small") do
         click_link "Edit"
       end
-      
+
       fill_in "Description", with: "This workout has been replaced by Workout 3"
 
       click_button "Submit Changes"

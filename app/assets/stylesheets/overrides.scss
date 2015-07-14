@@ -12,32 +12,33 @@ $font: $brown;
 
 .five-up.nav-top {
   background-color: $navmain;
-  padding: 0px;
+  padding: 0;
 }
 
-.five-up dd.active a {
-  background-color: scale-color($navmain, $lightness: -12%);
+.five-up .active a {
+  background-color: scale-color($navmain, $lightness: -6%);
 }
 
-.five-up.nav-bottom dd a{
+.five-up.nav-bottom a {
   background-color: $tabdown;
-  border-bottom-left-radius:30%;
-  border-bottom-right-radius:30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
   height: 40px;
   padding-top: 5px;
 }
 
-.five-up.nav-bottom dd.active a{
+.five-up.nav-bottom .active a{
   background-color: scale-color($tabdown, $lightness: -12%);
+
 }
 
 @media (max-width: 600px) {
 
-  .show_container {
-    margin: 20px 0px;
-    padding: 20px;
+  .show-container {
     background-color: $turq;
     border-radius: 20px;
+    margin: 20px 0px;
+    padding: 20px;
   }
 
 }
