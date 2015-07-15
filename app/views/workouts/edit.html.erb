@@ -1,13 +1,10 @@
-<div class="row">
-  <div class="small-4 small-centered column fill-form">
-    <%= form_for @workout do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-      <%= f.submit "Submit Changes"%>
-    <% end %>
+<%= form_for @workout do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit "Submit Changes"%>
+<% end %>
 
-  <%= button_to "Delete Workout", @workout, method: :delete, class: "button tiny round" , data:
-  {confirm: "Are you sure you want to delete your workout?"}%>
-</div></div>
+<%= button_to "Delete Workout", @workout, method: :delete, class: "button tiny round" , data:
+{confirm: "Are you sure you want to delete your workout?"}%>
