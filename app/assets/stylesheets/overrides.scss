@@ -28,10 +28,10 @@ $font: $brown;
 }
 
 #grad {
-  background: -webkit-linear-gradient($turq, $ltturq); // For Safari 5.1 to 6.0
-  background: -o-linear-gradient($turq, $ltturq); // For Opera 11.1 to 12.0
-  background: -moz-linear-gradient($turq, $ltturq); // For Firefox 3.6 to 15
-  background: linear-gradient($turq, $ltturq); // Standard syntax
+  background: -webkit-linear-gradient($turq, $ltturq);
+  background: -o-linear-gradient($turq, $ltturq);
+  background: -moz-linear-gradient($turq, $ltturq);
+  background: linear-gradient($turq, $ltturq);
 }
 
 .five-up.nav-top {
