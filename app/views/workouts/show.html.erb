@@ -1,5 +1,28 @@
 <div class="row">
-<div class="medium-8 medium-offset-2 custom-container container">
-  <h1><%= @workout.name %></h1>
-  <p><%= @workout.description %></p>
+  <div class="medium-8 medium-offset-2 custom-container container">
+    <h1><%= @workout.name %></h1>
+    <p><%= @workout.description %></p>
+  </div>
 </div>
+
+<% unless @exercises.empty? %>
+  <div class="row">
+    <div class="medium-8 medium-offset-2 custom-container container">
+      <table>
+        <thead>
+          <tr>
+            <th><Activity>Exercises</Activity></th>
+          </tr>
+        </thead>
+        <% @exercises.each do |exercise| %>
+          <tr>
+            <td>
+              <div class="exercise-type"><%= exercise.activity %></div>
+              <div class="exercise-intensity"><%= exercise.intensity %></div>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% end %>

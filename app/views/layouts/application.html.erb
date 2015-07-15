@@ -34,14 +34,4 @@
   </div>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
-
-  <script>
-    $(document).ready(function() {
-      setTimeout(function(){
-        $('#notice_wrapper').fadeOut("slow", function() {
-          $(this).remove();
-        })
-      }, 1500);
-    });
-  </script>
 </body>
