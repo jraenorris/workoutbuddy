@@ -116,10 +116,11 @@ $font-family-sans-serif: "Montserrat", Arial, sans-serif;
 
 $brown: #5e412f;
 $cream: #fcebb6;
-$turq: #00A67C;
-$ltturq: #66D4B9;
+$turq: #00a67c;
+$ltturq: #66d4b9;
 $orange: #f07818;
 $ltorange: #f0a830;
+$white: #fff;
 $mainlink: $turq;
 $navmain: $ltorange;
 $navactive: $orange;
@@ -1431,7 +1432,7 @@ $topbar-link-color: $font;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 $topbar-link-bg: $tabs-navigation-bg-color;
-$topbar-link-bg-hover: scale-color($navmain, $lightness: -6%);;
+$topbar-link-bg-hover: scale-color($navmain, $lightness: -6%);
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $white;
 // $topbar-link-bg-active-hover: scale-color($tabs-navigation-active-bg-color, $lightness: -14%);
