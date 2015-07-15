@@ -1,7 +1,6 @@
 class ExercisesController < ApplicationController
   before_action :authenticate_user!
 
-
   def new
     not_user_redirect
     @exercise = Exercise.new

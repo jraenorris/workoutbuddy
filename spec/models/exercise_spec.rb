@@ -9,7 +9,7 @@ describe Exercise do
       exercise2 = FactoryGirl.create(:exercise)
 
       workout.destroy
-      
+
       exercise1.should_not exist_in_database
       exercise2.should exist_in_database
     end

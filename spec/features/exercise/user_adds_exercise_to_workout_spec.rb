@@ -19,7 +19,6 @@ feature 'user adds an exercise', %{
   let!(:workout) { FactoryGirl.create(:workout, user: user) }
   let!(:user2) { FactoryGirl.create(:user) }
 
-
   context "user is signed in" do
     scenario 'user adds a valid exercise from workout detail page' do
       sign_in_as(user)
@@ -60,11 +59,10 @@ feature 'user adds an exercise', %{
     end
   end
 
-  # context "user is not signed in" do
-  #   scenario 'visitor tries to visit a show page' do
-  #     visit visit new_workout_exercise_path(workout)
-  #     expect(page).to have_content("Log in")
-  #   end
-  # end
-
+  context "user is not signed in" do
+    scenario 'visitor tries to visit a show page' do
+      visit visit new_workout_exercise_path(workout)
+      expect(page).to have_content("Log in")
+    end
+  end
 end
