@@ -11,7 +11,15 @@ FactoryGirl.define do
     factory :workout do
       sequence(:name) { |n| "Workout ##{n}" }
       description 'Created today this new great workout'
-      user_id 1
+      user
+    end
+  end
+
+  FactoryGirl.define do
+    factory :exercise do
+      workout
+      activity "push ups"
+      intensity "10x"
     end
   end
 end

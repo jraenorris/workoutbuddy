@@ -8,6 +8,7 @@ class WorkoutsController < ApplicationController
   def show
     @workout = Workout.find(params[:id])
     not_user_redirect
+    @exercises = Exercise.where(workout: params[:id])
   end
 
   def new
