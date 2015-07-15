@@ -2,29 +2,46 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width" />
-  <title>Workoutbuddy</title>
+  <title>WorkoutPartner</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 
 </head>
-<body id="page" class="off-canvas paneled">
-  <div class="container">
-    <header id="header" class="row">
-		  <div class="eight columns">
-	    <h1 id="site-title"><%= link_to "WorkoutPartner", root_path %></h1>
-      <%= render "layouts/flash" %>
-      <%= render "layouts/small_nav_bar" %>
-      <%= render "layouts/not_small_nav_bar" %>
-		  </div>
-		</header>
-
-    <div class="row">
-      <div class="eight columns">
-        <%= yield %>
-      </div>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= yield :extra_footer %>
+<body id="grad">
+  <div class="main-title">
+    <h1><%= link_to "WorkoutPartner", workouts_path %></h1>
   </div>
+  <div class="off-canvas-wrap fixed" data-offcanvas>
+    <div class="inner-wrap">
+
+      <%= render "layouts/small_nav_bar.html" %>
+      <%= render "layouts/not_small_nav_bar.html" %>
+      <%= render "layouts/flash" %>
+
+      <section class="main-section">
+        <div class="row fullWidth">
+          <div class="small-12 small-centered text-center">
+            <div class="row">
+              <div class="medium-8 medium-offset-2 custom-container container has-table">
+              <%= yield %>
+              </div>
+            </div>
+          </div>
+      </section>
+        <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application' %>
+  <%= yield :extra_footer %>
+
+  <script>
+    $(document).ready(function() {
+      setTimeout(function(){
+        $('#notice_wrapper').fadeOut("slow", function() {
+          $(this).remove();
+        })
+      }, 1500);
+    });
+  </script>
 </body>
-</html>

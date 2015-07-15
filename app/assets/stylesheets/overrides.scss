@@ -1,21 +1,45 @@
 $brown: #5e412f;
 $cream: #fcebb6;
-$turq: #78c0a8;
+$turq: #00a67c;
+$ltturq: #66d4b9;
 $orange: #f07818;
 $ltorange: #f0a830;
-
+$white: #fff;
 
 $navmain: $ltorange;
 $navactive: $orange;
 $tabdown: $cream;
 $font: $brown;
 
+.container {
+  background-color: $white;
+  border-radius: 20px;
+}
+
+.container:not(nav-top),
+.container:not(nav-bottom) {
+  margin: 10px 30px;
+}
+
+.main-title {
+  background-color: $white;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+#grad {
+  background: -webkit-linear-gradient($turq, $ltturq);
+  background: -o-linear-gradient($turq, $ltturq);
+  background: -moz-linear-gradient($turq, $ltturq);
+  background: linear-gradient($turq, $ltturq);
+}
+
 .five-up.nav-top {
   background-color: $navmain;
   padding: 0;
 }
 
-.five-up .active a {
+.tab-bar dd.active a {
   background-color: scale-color($navmain, $lightness: -6%);
 }
 
@@ -27,18 +51,35 @@ $font: $brown;
   padding-top: 5px;
 }
 
+.five-up.show-for-small a {
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
 .five-up.nav-bottom .active a{
   background-color: scale-color($tabdown, $lightness: -12%);
 
 }
 
-@media (max-width: 600px) {
+.add-padding,
+.add-padding a {
+  color: $brown;
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
-  .show-container {
-    background-color: $turq;
-    border-radius: 20px;
-    margin: 20px 0px;
-    padding: 20px;
-  }
+.custom-container {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 15px;
+}
 
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.has-table {
+  padding-bottom: 20px;
 }

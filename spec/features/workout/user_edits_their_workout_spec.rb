@@ -59,7 +59,9 @@ feature 'user edits details of a created workout', %{
       visit workout_path(workout)
 
       expect(page).to have_content("Only workouts you created are viewable")
-      expect(page).to_not have_content("Edit")
+      within('.show-for-small') do
+        expect(page).to_not have_content("Edit")
+      end
     end
 
     scenario "user cannot see edit page" do
@@ -68,7 +70,9 @@ feature 'user edits details of a created workout', %{
       visit edit_workout_path(workout)
 
       expect(page).to have_content("Only workouts you created are viewable")
-      expect(page).to_not have_content("Edit")
+      within('.show-for-small') do
+        expect(page).to_not have_content("Edit")
+      end
     end
   end
 
