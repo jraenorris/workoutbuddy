@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :homes, only: [:index]
   resources :workouts do
-    resources :exercises
+    resources :exercises, except: [:index, :show]
   end
 end

@@ -1,0 +1,14 @@
+<h4>Edit:</h4>
+<div class="row">
+  <div class="medium-8 medium-offset-2 custom-container container">
+    <%= form_for [ @workout, @exercise ] do |f| %>
+      <%= f.label "activity" %>
+      <%= f.text_field :activity %>
+
+      <%= f.label "intensity" %>
+      <%= f.text_field :intensity %>
+
+      <%= f.submit "Update Exercise" %>
+    <% end %>
+  </div>
+</div>
