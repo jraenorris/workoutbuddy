@@ -27,7 +27,9 @@ feature 'user deletes their exercise', %{
       click_link "Delete exercise"
 
       expect(page).to_not have_content(exercise.activity)
-      expect(page).to have_content("Your exercise has been taken out of your workout")
+      expect(page).to have_content(
+        "Your exercise has been taken out of your workout"
+      )
     end
 
     scenario "an authenticated user cannot delete another user's exercise" do

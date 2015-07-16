@@ -45,7 +45,7 @@ feature 'user edits details of a created workout', %{
       end
 
       fill_in "Name", with: ""
-      
+
       click_button "Submit Changes"
 
       expect(page).to have_content("Name can't be blank")
