@@ -30,6 +30,8 @@ class WorkoutsController < ApplicationController
   def edit
     @workout = Workout.find(params[:id])
     not_user_redirect
+    @exercise = Exercise.new
+    @exercises = Exercise.where(workout: params[:id])
   end
 
   def update
@@ -40,6 +42,8 @@ class WorkoutsController < ApplicationController
       redirect_to workout_path(@workout)
     else
       flash[:notice] = @workout.errors.full_messages.join(". ")
+      @exercise = Exercise.new
+      @exercises = Exercise.where(workout: params[:id])
       render :edit
     end
   end
