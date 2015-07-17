@@ -5,7 +5,16 @@
   </div>
 </div>
 
-<% unless @exercises.empty? %>
+<% if @exercises.empty? %>
+  <div class="row">
+    <div class="medium-8 medium-offset-2 custom-container container">
+      <p>
+        You do not have any exercises for this workout. Add exercises
+        <%= link_to "here!", edit_workout_path(@workout) %>
+      </p>
+    </div>
+  </div>
+<% else %>
   <div class="row">
     <div class="medium-8 medium-offset-2 custom-container container">
       <table>

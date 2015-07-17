@@ -15,7 +15,7 @@ class ExercisesController < ApplicationController
     @exercises = Exercise.where(workout: params[:id])
     if @exercise.save
       flash[:success] = "Exercise added to #{@workout.name}!"
-      redirect_to workout_path(@workout)
+      redirect_to edit_workout_path(@workout)
     else
       flash[:notice] = @exercise.errors.full_messages.join(". ")
       render 'workouts/edit'
@@ -45,7 +45,7 @@ class ExercisesController < ApplicationController
   def destroy
     @exercise = Exercise.find(params[:id]).destroy
     flash[:success] = "Your exercise has been taken out of your workout"
-    redirect_to workout_path(params[:workout_id])
+    redirect_to edit_workout_path(params[:workout_id])
   end
 
   def not_user_redirect
