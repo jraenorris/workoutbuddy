@@ -39,7 +39,7 @@ class WorkoutsController < ApplicationController
     not_user_redirect
     if @workout.update_attributes(workout_params)
       flash[:success] = 'Changes saved successfully'
-      redirect_to workout_path(@workout)
+      redirect_to edit_workout_path(@workout)
     else
       flash[:notice] = @workout.errors.full_messages.join(". ")
       @exercise = Exercise.new
