@@ -31,7 +31,6 @@ feature 'user edits details of a created workout', %{
 
       click_button "Submit Changes"
 
-      expect(page).to have_content("This workout has been replaced by ")
       expect(page).to have_content("Changes saved successfully")
     end
 
