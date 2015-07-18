@@ -76,9 +76,8 @@ $table-head-font: $font;
 }
 
 .top-bar {
-border-top: $navborder solid 4px;
-//border-bottom-color: $navmain solid 4px;
-height: 49px;
+  border-top: $navborder solid 4px;
+  height: 49px;
 }
 
 .five-up.nav-top {
@@ -171,5 +170,10 @@ p.notice {
 }
 
 table {
-    border-spacing: 0 !important;
+    border-spacing: 0;
+}
+
+.exercise-intensity {
+  font-style: italic;
+  padding-left: 10px;
 }
