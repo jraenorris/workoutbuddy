@@ -24,7 +24,7 @@ feature 'user adds an exercise', %{
       sign_in_as(user)
       visit workout_path(workout)
 
-      within(".hide-for-small") do
+      within(".top-bar-section .hide-for-small") do
         click_link "Edit"
       end
 

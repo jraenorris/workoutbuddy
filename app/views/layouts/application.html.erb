@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width" />
-  <title>WorkoutPartner</title>
+  <title class="title-area">WorkoutPartner</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 
@@ -11,12 +11,13 @@
   <div class="main-title">
     <h1><%= link_to "WorkoutPartner", workouts_path %></h1>
   </div>
+  <%= render "layouts/flash" %>
+
   <div class="off-canvas-wrap fixed" data-offcanvas>
     <div class="inner-wrap">
 
       <%= render "layouts/small_nav_bar.html" %>
       <%= render "layouts/not_small_nav_bar.html" %>
-      <%= render "layouts/flash" %>
 
       <section class="main-section">
         <div class="row fullWidth">

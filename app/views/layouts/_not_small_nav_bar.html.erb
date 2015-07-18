@@ -7,7 +7,7 @@
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       </ul>
       <ul>
-        <dl class="tabs five-up nav-bottom">
+        <dl class="tabs five-up hide-for-small sign-in nav-bottom">
           <% if will_show_nav_items_for?("show", "workouts") || will_show_nav_items_for?("edit", "workouts") || will_show_nav_items_for?("new", "exercises")%>
               <dd class=<%= class_active("show", "workouts") %>><%= link_to "Details", workout_path(@workout) %></dd>
               <dd class=<%= class_active("edit", "workouts") %>><%= link_to "Edit", edit_workout_path(@workout) %></dd>
@@ -22,3 +22,5 @@
     </ul>
   </section>
 </nav>
+<div class="row">
+</div>

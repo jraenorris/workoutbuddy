@@ -22,7 +22,7 @@ feature 'user signs out', %Q{
 
     expect(page).to have_content('Signed in successfully')
 
-    within(".hide-for-small") do
+    within(".top-bar-section") do
       click_link "Sign Out"
     end
     expect(page).to have_content('Signed out successfully')
