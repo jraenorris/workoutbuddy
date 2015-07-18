@@ -9,7 +9,14 @@
 </head>
 <body id="grad">
   <div class="main-title">
-    <h1><%= link_to image_tag("Logo.png", border: 0, size: '40x40'),  workouts_path %> <%= link_to "WorkoutPartner", workouts_path %></h1>
+    <h1>
+      <a href='<%= workouts_path %>'>
+        <span class="fa-stack">
+          <i class="fa fa-star fa-stack-2x orange"></i>
+          <i class="fa fa-check fa-stack-1x"></i>
+        </span>
+        WorkoutPartner</a>
+    </h1>
   </div>
   <%= render "layouts/flash" %>
 

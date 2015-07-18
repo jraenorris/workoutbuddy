@@ -24,7 +24,9 @@ feature 'user deletes their exercise', %{
 
       visit edit_workout_path(workout)
 
-      click_link "Delete exercise"
+      within(".exercises-table-edit-page") do
+        find(".delete-icon").click
+      end
 
       expect(page).to_not have_content(exercise.activity)
       expect(page).to have_content(

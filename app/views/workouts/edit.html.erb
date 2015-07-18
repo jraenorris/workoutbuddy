@@ -21,7 +21,7 @@
   <div class="medium-8 medium-offset-2 custom-container container">
     <h4>Exercises for <%= @workout.name %></h4>
     <% unless @exercises.empty? %>
-    <table class="full-width">
+    <table class="full-width exercises-table-edit-page">
         <thead>
           <tr>
             <th>Edit</th>
@@ -31,11 +31,11 @@
         </thead>
         <% @exercises.each do |exercise| %>
           <tr>
-            <td>
-              <%= link_to image_tag("Edit.png", border: 0, size: '30x30', alt: "Edit exercise"),  edit_workout_exercise_path(@workout, exercise) %>
+            <td class="icon-edit">
+              <%= link_to fa_icon("pencil"), edit_workout_exercise_path(@workout, exercise), class: "edit-icon" %>
             </td>
-            <td>
-              <%= link_to image_tag("Delete-single.png", border: 0, size: '30x30', alt: "Delete exercise"),  workout_exercise_path(@workout, exercise),  method: :delete, data: { confirm: 'Are you sure you want to delete this exercise?' } %>
+            <td class="icon-edit">
+              <%= link_to  fa_icon("times"),  workout_exercise_path(@workout, exercise),  method: :delete, class: 'delete-icon', data: { confirm: 'Are you sure you want to delete this exercise?' } %>
             </td>
             <td>
               <div class="exercise-type"><%= exercise.activity %></div>

@@ -85,8 +85,8 @@ $table-head-font: $font;
   padding: 0;
 }
 
-.tab-bar dd.active a {
-  background-color: scale-color($navmain, $lightness: -6%);
+.tab-bar .active a {
+  background-color: scale-color($navmain, $lightness: -20%);
 }
 
 .tab-bar {
@@ -97,9 +97,17 @@ $table-head-font: $font;
   background-color: $subnav;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  font-size: 10pt;
-  height: 45px;
-  padding-top: 10px;
+  height: 40px;
+  padding: 10px 20px;
+}
+
+.five-up.nav-bottom.show-for-small a {
+  font-size: 30px;
+  height: 50px;
+  padding-top: 0;
+  :hover {
+    color: $accent;
+  }
 }
 
 .five-up.show-for-small a {
@@ -109,7 +117,6 @@ $table-head-font: $font;
 
 .five-up.nav-bottom .active a{
   background-color: scale-color($subnav, $lightness: -12%);
-
 }
 
 .add-padding,
@@ -117,6 +124,9 @@ $table-head-font: $font;
   color: $navmainfont;
   padding-left: 8px;
   padding-right: 8px;
+  :hover {
+    color: $accent;
+  }
 }
 
 .custom-container {
@@ -176,4 +186,15 @@ table {
 .exercise-intensity {
   font-style: italic;
   padding-left: 10px;
+}
+
+.icon-edit {
+  font-size: 30px;
+  a:hover {
+    color: $accent;
+  }
+}
+
+.orange {
+  color: $accent;
 }
