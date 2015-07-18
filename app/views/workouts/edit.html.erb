@@ -6,22 +6,22 @@
     <%= f.text_field :name %>
     <%= f.label :description %>
     <%= f.text_field :description %>
-    <%= f.submit "Submit Changes"%>
+    <%= f.submit "Submit Changes", class: "button tiny round" %>
   <% end %>
   </div>
 </div>
 
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
-    </div>
   </div>
+</div>
 
 
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
     <h4>Exercises for <%= @workout.name %></h4>
     <% unless @exercises.empty? %>
-    <table>
+    <table class="full-width">
         <thead>
           <tr>
             <th>Edit</th>
@@ -53,7 +53,7 @@
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
     <p>Add to your workout by following this example:</p>
-    <table class="example-table">
+    <table class="example-table full-width">
       <thead>
         <tr>
           <th>Activity</th>
@@ -73,7 +73,7 @@
         <%= f.label "Intensity" %>
         <%= f.text_field :intensity %>
 
-        <%= f.submit "Add to workout" %>
+        <%= f.submit "Add to workout", class: "button tiny round" %>
       <% end %>
     </div>
   </div>

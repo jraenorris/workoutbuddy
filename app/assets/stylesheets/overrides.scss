@@ -1,19 +1,60 @@
-$brown: #5e412f;
-$cream: #fcebb6;
-$turq: #00a67c;
-$ltturq: #66d4b9;
-$orange: #f07818;
-$ltorange: #f0a830;
+/* $brown: #3E2723;
+$cream: #FFECB3;
+$turq: #00BFA5;
+$ltturq: #1DE9B6;
+$orange: #FFC107;
+$ltorange: #FFD54F;
+$white: #fff; */
+$cyan: #00BCD4;
+$dkcyan: #006064;
+$orange: #FFCA28;
+$ltorange: #FFD54F;
+$cream: #FFECB3;
+
+$accent: #2962FF;
+$darkest: #1A237E;
+$second: #283593;
+$third: #303F9F;
+$fourth: #3949AB;
+$fifth: #3F51B5;
+$sixth: #5C6BC0;
+$lightest: #E8EAF6;
+$lighter: #C5CAE9;
+
+$accent: #FF6F00;
 $white: #fff;
 
-$navmain: $ltorange;
-$navactive: $orange;
-$tabdown: $cream;
-$font: $brown;
+$behindtitle: $darkest;
+$titlecolor: $white;
+
+$navborder: $accent;
+$navmain: $third; // will be darker for active
+$navmainfont: $white;
+$subnav: $fourth; // will be darker for active
+$font: $white;
+
+$oc-bg: $white; // will be darker for active
+$oc-label: $white;
+$oc-label-bg: $accent;
+$oc-link: $accent;
+
+$lowerbg: $lighter;
+$upperbg: $lightest;
+$background: $sixth;
+
+$header: #fff;
+$links: $darkest; // will be darker for active
+
+$formlabel: $font;
+
+$table-odd: $font;
+$table-even: $font;
+$table-head: $fourth;
+$table-head-font: $font;
 
 .container {
-  background-color: $white;
-  border-radius: 20px;
+  background-color: $background;
+  border-radius: 8px;
 }
 
 .container:not(nav-top),
@@ -22,16 +63,22 @@ $font: $brown;
 }
 
 .main-title {
-  background-color: $white;
+  background-color: $behindtitle;
   margin: 0;
   padding: 5px 10px;
 }
 
 #grad {
-  background: -webkit-linear-gradient($turq, $ltturq);
-  background: -o-linear-gradient($turq, $ltturq);
-  background: -moz-linear-gradient($turq, $ltturq);
-  background: linear-gradient($turq, $ltturq);
+  background: -webkit-linear-gradient($lowerbg, $upperbg);
+  background: -o-linear-gradient($lowerbg, $upperbg);
+  background: -moz-linear-gradient($lowerbg, $upperbg);
+  background: linear-gradient($lowerbg, $upperbg);
+}
+
+.top-bar {
+border-top: $navborder solid 4px;
+//border-bottom-color: $navmain solid 4px;
+height: 49px;
 }
 
 .five-up.nav-top {
@@ -43,12 +90,17 @@ $font: $brown;
   background-color: scale-color($navmain, $lightness: -6%);
 }
 
+.tab-bar {
+  border-top: $accent solid 3px;
+}
+
 .five-up.nav-bottom a {
-  background-color: $tabdown;
+  background-color: $subnav;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  height: 40px;
-  padding-top: 5px;
+  font-size: 10pt;
+  height: 45px;
+  padding-top: 10px;
 }
 
 .five-up.show-for-small a {
@@ -57,13 +109,13 @@ $font: $brown;
 }
 
 .five-up.nav-bottom .active a{
-  background-color: scale-color($tabdown, $lightness: -12%);
+  background-color: scale-color($subnav, $lightness: -12%);
 
 }
 
 .add-padding,
 .add-padding a {
-  color: $brown;
+  color: $navmainfont;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -74,16 +126,44 @@ $font: $brown;
   padding: 15px;
 }
 
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 500px;
-}
-
 .has-table {
   padding-bottom: 20px;
 }
 
 .example-table {
   font-style: italic;
+  align: center;
+}
+
+.exercise-table {
+  align: center;
+}
+
+.main-title a {
+  color: $titlecolor;
+}
+
+.button.round {
+  background-color: $navborder;
+  color: $navmainfont;
+}
+
+.full-width {
+  width: 100%;
+}
+
+#notice_wrapper {
+  background-color: $accent;
+}
+
+p.notice {
+  background-color: $accent;
+}
+
+.flash-alert {
+  background-color: $accent;
+}
+
+table {
+    border-spacing: 0 !important;
 }

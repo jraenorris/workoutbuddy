@@ -114,18 +114,53 @@ $font-family-sans-serif: "Montserrat", Arial, sans-serif;
 // $jet         : #222222;
 // $black       : #000000;
 
-$brown: #5e412f;
-$cream: #fcebb6;
-$turq: #00a67c;
-$ltturq: #66d4b9;
-$orange: #f07818;
-$ltorange: #f0a830;
-$white: #fff;
-$mainlink: $turq;
-$navmain: $ltorange;
-$navactive: $orange;
-$tabdown: $cream;
-$font: $brown;
+
+$cyan: #00BCD4;
+$dkcyan: #006064;
+$orange: #FFCA28;
+$ltorange: #FFD54F;
+$cream: #FFECB3;
+
+$accent: #2962FF;
+$darkest: #1A237E;
+$second: #283593;
+$third: #303F9F;
+$fourth: #3949AB;
+$fifth: #3F51B5;
+$sixth: #5C6BC0;
+$lightest: #E8EAF6;
+$lighter: #C5CAE9;
+
+$accent: #FF6F00;
+$white: $lightest;
+
+$behindtitle: $darkest;
+$titlecolor: $white;
+
+$navborder: $accent;
+$navmain: $third; // will be darker for active
+$navmainfont: $white;
+$subnav: $fourth; // will be darker for active
+$font: $white;
+
+$oc-bg: $white; // will be darker for active
+$oc-label: $white;
+$oc-label-bg: $accent;
+$oc-link: $darkest;
+
+$lowerbg: $lighter;
+$upperbg: $lightest;
+$background: $sixth;
+
+$header: #fff;
+$links: $darkest; // will be darker for active
+
+$formlabel: $font;
+
+$table-odd: $font;
+$table-even: $font;
+$table-head: $fourth;
+$table-head-font: $font;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -136,8 +171,8 @@ $font: $brown;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $turq;
-$body-font-color: $brown;
+$body-bg: $lowerbg;
+$body-font-color: $font;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -225,7 +260,7 @@ $body-font-color: $brown;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-$header-font-color: $font;
+$header-font-color: $header;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -263,7 +298,7 @@ $header-font-color: $font;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
-// $paragraph-margin-bottom: rem-calc(20);
+$paragraph-margin-bottom: rem-calc(0);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
 // $paragraph-aside-font-style: italic;
@@ -282,7 +317,7 @@ $header-font-color: $font;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-$anchor-font-color: $mainlink;
+$anchor-font-color: $links;
 $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 
 // We use these to style the <hr> element
@@ -379,7 +414,7 @@ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
-// $alert-bottom-margin: rem-calc(20);
+$alert-bottom-margin: rem-calc(0);
 
 // We use these to style the close buttons
 // $alert-close-color: $oil;
@@ -461,7 +496,7 @@ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: $white;
+$button-font-color: $white;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
@@ -476,7 +511,7 @@ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $accent;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -653,7 +688,7 @@ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
-$form-label-font-color: scale-color($font, $lightness: 20%);
+$form-label-font-color: scale-color($formlabel, $lightness: 20%);
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
@@ -847,11 +882,11 @@ $form-label-font-color: scale-color($font, $lightness: 20%);
 // Off Canvas Tab Bar Variables
 // $include-html-off-canvas-classes: $include-html-classes;
 
-$tabbar-bg: $ltorange;
+$tabbar-bg: $navmain;
 // $tabbar-height: rem-calc(45);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
-$tabbar-color: $brown;
+$tabbar-color: $navmainfont;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
@@ -860,29 +895,29 @@ $tabbar-color: $brown;
 
 
 // Off Canvas Tab Bar Headers
-$tabbar-header-color: $brown;
+$tabbar-header-color: $navmainfont;
 // $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);
-$off-canvas-bg: $cream;
+$off-canvas-bg: $oc-bg;
 // $off-canvas-bg-hover: scale-color($tabbar-bg, $lightness: -30%);
-$off-canvas-bg-active: scale-color($tabbar-bg, $lightness: -30%);
+$off-canvas-bg-active: scale-color($oc-bg, $lightness: -30%);
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: .3rem rem-calc(15);
-$off-canvas-label-color: $cream;
+$off-canvas-label-color: $oc-label;
 // $off-canvas-label-text-transform: uppercase;
 // $off-canvas-label-font-size: rem-calc(12);
 // $off-canvas-label-font-weight: $font-weight-bold;
-$off-canvas-label-bg: $ltorange;
+$off-canvas-label-bg: $oc-label-bg;
 // $off-canvas-label-border-top: 1px solid scale-color($off-canvas-label-bg, $lightness: 14%);
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-$off-canvas-link-color: $brown;
+$off-canvas-link-color: $oc-link;
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: #444;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
@@ -892,7 +927,7 @@ $off-canvas-link-color: $brown;
 // $off-canvas-back-hover-border-bottom: none;
 
 // Off Canvas Menu Icon Variables
-$tabbar-menu-icon-color: $brown;
+$tabbar-menu-icon-color: $navmainfont;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -1304,18 +1339,18 @@ $tabbar-menu-icon-color: $brown;
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: $white;
-$table-even-row-bg: scale-color($cream, $lightness: 85%);
+$table-bg: $table-odd;
+$table-even-row-bg: $table-even;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
+$table-border-size: 0;
 // $table-border-color: $gainsboro;
 
 // These control the table head styles
-$table-head-bg: $cream;
+$table-head-bg: $table-head;
 // $table-head-font-size: rem-calc(14);
-$table-head-font-color: $brown;
+$table-head-font-color: $table-head-font;
 // $table-head-font-weight: $font-weight-bold;
 // $table-head-padding: rem-calc(8 10 10);
 
@@ -1351,10 +1386,10 @@ $table-head-font-color: $brown;
 
 // $tabs-navigatn-padding: rem-calc(16);
 $tabs-navigation-bg-color: $navmain;
-$tabs-navigation-active-bg-color: $navactive;
-$tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-$tabs-navigation-font-color: $brown;
-$tabs-navigation-active-font-color: $brown;
+$tabs-navigation-active-bg-color: scale-color($navmain, $lightness: -12%);
+$tabs-navigation-hover-bg-color: scale-color($navmain, $lightness: -6%);
+$tabs-navigation-font-color: $navmainfont;
+$tabs-navigation-active-font-color: $navmainfont;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
 

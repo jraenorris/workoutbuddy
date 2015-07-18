@@ -22,7 +22,7 @@ feature 'user deletes a workout they created', %{
       visit workouts_path
 
       click_link workout.name
-      within(".hide-for-small") do
+      within(".top-bar-section .hide-for-small") do
         click_link "Delete"
       end
 
