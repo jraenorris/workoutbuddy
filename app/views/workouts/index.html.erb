@@ -1,22 +1,21 @@
-  <h1>Your Workouts</h1>
-  <% if @workouts.empty? %>
-    You have no workouts. <%= link_to "Click here", new_workout_path %> to create one!
-  <% else %>
-    <table class="full-width">
-      <thead>
-        <tr>
-          <th class="hide-for-small"></th>
-          <th>Workout</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <% @workouts.each do |workout| %>
-        <tr>
-          <td class="hide-for-small"><%= link_to image_tag("Delete-single.png", border: 0, size: '30x30'),  workout_path(workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %></td>
-          <td><%= link_to "#{workout.name}", workout_path(workout) %></td>
-          <td><%= truncate("#{workout.description}", length: 50, separator: ' ') %></td>
-        </tr>
-      <% end %>
-    </table>
-  <%= paginate @users %>
-  <% end %>
+<h1>Your Workouts</h1>
+<% if @workouts.empty? %>
+  You have no workouts. <%= link_to "Click here", new_workout_path %> to create one!
+<% else %>
+  <table class="full-width">
+    <thead>
+      <tr>
+        <th class="hide-for-small"></th>
+        <th>Workout</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <% @workouts.each do |workout| %>
+      <tr>
+        <td class="hide-for-small"><%= link_to image_tag("Delete-single.png", border: 0, size: '30x30'),  workout_path(workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %></td>
+        <td><%= link_to "#{workout.name}", workout_path(workout) %></td>
+        <td><%= truncate("#{workout.description}", length: 50, separator: ' ') %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
