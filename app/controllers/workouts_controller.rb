@@ -2,7 +2,7 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @workouts = current_user.workouts
+    @workouts = current_user.workouts.page(params[:page]).per(20)
   end
 
   def show

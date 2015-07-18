@@ -6,14 +6,13 @@ feature 'trainer sees user list', %Q{
   So I can find my trainees
 } do
   # Acceptance Criteria
-  # [] I must be signed in with a trainer account
-  # [] I recieve an error if I try to view the page and am not signed in
-  # [] Trainees should be a paginated list organized by their name
+  # [x] I must be signed in with a trainer account
+  # [x] I recieve an error if I try to view the page and am not a trainer
+  # [x] Users should be a paginated list organized by their name
 
   let!(:trainer) { FactoryGirl.create(:user, role: 'trainer') }
-  let!(:user_a) { FactoryGirl.create(:user, fullname: "Alonsy Alonso")}
-  let!(:user_z) { FactoryGirl.create(:user, fullname: "Zenon girl of the..")}
-
+  let!(:user_a) { FactoryGirl.create(:user, fullname: "Alonsy Alonso") }
+  let!(:user_z) { FactoryGirl.create(:user, fullname: "Zenon girl of the..") }
 
   scenario 'authenticated trainer views user list' do
     25.times do
