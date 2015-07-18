@@ -98,9 +98,9 @@ height: 49px;
   background-color: $subnav;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  font-size: 10pt;
-  height: 45px;
-  padding-top: 10px;
+  height: 50px;
+  padding-top: 0;
+  font-size: 30px;
 }
 
 .five-up.show-for-small a {
@@ -110,7 +110,6 @@ height: 49px;
 
 .five-up.nav-bottom .active a{
   background-color: scale-color($subnav, $lightness: -12%);
-
 }
 
 .add-padding,
@@ -166,4 +165,12 @@ p.notice {
 
 table {
     border-spacing: 0 !important;
+}
+
+.fa-edit {
+  font-size: 30px;
+}
+
+.orange {
+  color: $accent;
 }

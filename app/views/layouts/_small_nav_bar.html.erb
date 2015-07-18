@@ -33,13 +33,13 @@
 <dl class="tabs five-up show-for-small nav-bottom">
   <% if will_show_nav_items_for?("show", "workouts") || will_show_nav_items_for?("edit", "workouts") || will_show_nav_items_for?("new", "exercises")%>
     <dd class=<%= class_active("show", "workouts") %>>
-      <%= link_to image_tag("View.png", border: 0, size: '25x25'),  workout_path(@workout) %>
+      <%= link_to fa_icon("eye"),  workout_path(@workout) %>
     </dd>
     <dd class=<%= class_active("edit", "workouts") %>>
-      <%= link_to image_tag("Edit-white.png", border: 0, size: '25x25'),  edit_workout_path(@workout) %>
+      <%= link_to fa_icon("pencil"),  edit_workout_path(@workout) %>
     </dd>
     <dd>
-      <%= link_to image_tag("Delete-list.png", border: 0, size: '25x25'),  workout_path(@workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %>
+      <%= link_to fa_icon("trash-o"),  workout_path(@workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %>
     </dd>
   <% end %>
 </dl>
