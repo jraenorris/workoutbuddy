@@ -24,7 +24,10 @@ feature 'user updates their exercise', %{
       sign_in_as(user)
 
       visit edit_workout_path(workout)
-      click_link "Edit exercise"
+
+      within(".exercises-table-edit-page") do
+        find(".edit-icon").click
+      end
 
       fill_in "exercise[intensity]", with: "More intense length"
 
@@ -38,8 +41,10 @@ feature 'user updates their exercise', %{
       sign_in_as(user)
 
       visit edit_workout_path(workout)
-      click_link "Edit exercise"
-
+      within(".exercises-table-edit-page") do
+        find(".edit-icon").click
+      end
+      
       fill_in "exercise[intensity]", with: ""
 
       click_button "Update Exercise"

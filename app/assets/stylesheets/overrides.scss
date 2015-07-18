@@ -86,8 +86,8 @@ height: 49px;
   padding: 0;
 }
 
-.tab-bar dd.active a {
-  background-color: scale-color($navmain, $lightness: -6%);
+.tab-bar .active a {
+  background-color: scale-color($navmain, $lightness: -20%);
 }
 
 .tab-bar {
@@ -98,9 +98,17 @@ height: 49px;
   background-color: $subnav;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  height: 50px;
+  padding: 10px 20px;
+  height: 40px;
+}
+
+.five-up.nav-bottom.show-for-small a {
   padding-top: 0;
+  height: 50px;
   font-size: 30px;
+  :hover {
+    color: $accent;
+  }
 }
 
 .five-up.show-for-small a {
@@ -117,6 +125,9 @@ height: 49px;
   color: $navmainfont;
   padding-left: 8px;
   padding-right: 8px;
+  :hover {
+    color: $accent;
+  }
 }
 
 .custom-container {
@@ -167,8 +178,11 @@ table {
     border-spacing: 0 !important;
 }
 
-.fa-edit {
+.icon-edit {
   font-size: 30px;
+  a:hover {
+    color: $accent;
+  }
 }
 
 .orange {
