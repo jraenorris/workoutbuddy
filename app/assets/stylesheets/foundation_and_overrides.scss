@@ -131,13 +131,13 @@ $sixth: #5C6BC0;
 $lightest: #E8EAF6;
 $lighter: #C5CAE9;
 
-$pink: #FF6F00;
+$accent: #FF6F00;
 $white: $lightest;
 
 $behindtitle: $darkest;
 $titlecolor: $white;
 
-$navborder: $pink;
+$navborder: $accent;
 $navmain: $third; // will be darker for active
 $navmainfont: $white;
 $subnav: $fourth; // will be darker for active
@@ -145,7 +145,7 @@ $font: $white;
 
 $oc-bg: $white; // will be darker for active
 $oc-label: $white;
-$oc-label-bg: $pink;
+$oc-label-bg: $accent;
 $oc-link: $darkest;
 
 $lowerbg: $lighter;
@@ -298,7 +298,7 @@ $header-font-color: $header;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
-// $paragraph-margin-bottom: rem-calc(20);
+$paragraph-margin-bottom: rem-calc(0);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
 // $paragraph-aside-font-style: italic;
@@ -414,7 +414,7 @@ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
-// $alert-bottom-margin: rem-calc(20);
+$alert-bottom-margin: rem-calc(0);
 
 // We use these to style the close buttons
 // $alert-close-color: $oil;
@@ -511,7 +511,7 @@ $button-font-color: $white;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-$button-bg-color: $pink;
+$button-bg-color: $accent;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1340,7 +1340,7 @@ $tabbar-menu-icon-color: $navmainfont;
 
 // These control the background color for the table and even rows
 $table-bg: $table-odd;
-$table-even-row-bg: scale-color($table-even, $lightness: 85%);
+$table-even-row-bg: $table-even;
 
 // These control the table cell border style
 // $table-border-style: solid;

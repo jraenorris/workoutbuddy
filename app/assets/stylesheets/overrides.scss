@@ -21,13 +21,13 @@ $sixth: #5C6BC0;
 $lightest: #E8EAF6;
 $lighter: #C5CAE9;
 
-$pink: #FF6F00;
+$accent: #FF6F00;
 $white: #fff;
 
 $behindtitle: $darkest;
 $titlecolor: $white;
 
-$navborder: $pink;
+$navborder: $accent;
 $navmain: $third; // will be darker for active
 $navmainfont: $white;
 $subnav: $fourth; // will be darker for active
@@ -35,8 +35,8 @@ $font: $white;
 
 $oc-bg: $white; // will be darker for active
 $oc-label: $white;
-$oc-label-bg: $pink;
-$oc-link: $pink;
+$oc-label-bg: $accent;
+$oc-link: $accent;
 
 $lowerbg: $lighter;
 $upperbg: $lightest;
@@ -54,7 +54,7 @@ $table-head-font: $font;
 
 .container {
   background-color: $background;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .container:not(nav-top),
@@ -91,7 +91,7 @@ height: 49px;
 }
 
 .tab-bar {
-  border-top: $pink solid 3px;
+  border-top: $accent solid 3px;
 }
 
 .five-up.nav-bottom a {
@@ -126,12 +126,6 @@ height: 49px;
   padding: 15px;
 }
 
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 500px;
-}
-
 .has-table {
   padding-bottom: 20px;
 }
@@ -158,6 +152,18 @@ table.center {
   width: 100%;
 }
 
-.notice {
+#notice_wrapper {
   background-color: $accent;
+}
+
+p.notice {
+  background-color: $accent;
+}
+
+.flash-alert {
+  background-color: $accent;
+}
+
+table {
+    border-spacing: 0 !important;
 }
