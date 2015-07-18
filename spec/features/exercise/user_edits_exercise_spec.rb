@@ -44,7 +44,7 @@ feature 'user updates their exercise', %{
       within(".exercises-table-edit-page") do
         find(".edit-icon").click
       end
-      
+
       fill_in "exercise[intensity]", with: ""
 
       click_button "Update Exercise"

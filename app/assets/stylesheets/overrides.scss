@@ -98,14 +98,14 @@ height: 49px;
   background-color: $subnav;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  padding: 10px 20px;
   height: 40px;
+  padding: 10px 20px;
 }
 
 .five-up.nav-bottom.show-for-small a {
-  padding-top: 0;
-  height: 50px;
   font-size: 30px;
+  height: 50px;
+  padding-top: 0;
   :hover {
     color: $accent;
   }
