@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'trainer sees user list', %Q{
+feature 'trainer sees user list', %{
   As an authenticated trainer
   I want to see a list of users
   So I can find my trainees
