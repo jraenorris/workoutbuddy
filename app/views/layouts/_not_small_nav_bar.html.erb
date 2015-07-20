@@ -7,6 +7,7 @@
         <% if current_user.role == 'trainer' %>
           <li><%= link_to "View User List", trainer_users_path %></li>
         <% end %>
+        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       </ul>
       <ul>
