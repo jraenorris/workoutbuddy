@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem "kaminari"
+gem 'devise'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'pry'
@@ -21,6 +23,4 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers'
-  gem 'devise'
-  gem 'foundation-rails'
 end
