@@ -1,11 +1,9 @@
 <% if current_user %>
   <nav class="tab-bar sticky show-for-small-only">
     <section class="tab-bar-section add-padding">
-      <%= link_to "View", workouts_path %>
+      <%= link_to "Workouts", workouts_path %>
+      <%= link_to "Competed", completeds_path %>
       <%= link_to "Create", new_workout_path %>
-      <% if current_user.role == 'trainer' %>
-        <%= link_to "Users", trainer_users_path %>
-      <% end %>
     </section>
     <section class="right-small">
       <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
@@ -16,6 +14,9 @@
     <ul class="off-canvas-list">
       <li><label> Welcome! </label></li>
       <%- if current_user %>
+        <% if current_user.role == 'trainer' %>
+          <%= link_to "View Users", trainer_users_path %>
+        <% end %>
         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <%- else -%>
