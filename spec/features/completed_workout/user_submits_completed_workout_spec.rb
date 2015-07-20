@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user submits completed workout', %Q{
+feature 'user submits completed workout', %{
   As a user
   I want to submit when I complete a workout
   So that my trainer and I can track my progress
@@ -30,7 +30,11 @@ feature 'user submits completed workout', %Q{
   end
 
   scenario 'trainer can see completed workout on user show page' do
-    completed = Completed.create(user_id: user.id, workout_id: workout.id, workout_name: "test name")
+    Completed.create(
+      user_id: user.id,
+      workout_id: workout.id,
+      workout_name: "test name"
+    )
 
     sign_in_as(trainer)
 

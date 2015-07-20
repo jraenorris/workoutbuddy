@@ -43,7 +43,8 @@ class ExercisesController < ApplicationController
   end
 
   def not_user_redirect
-    if Workout.find(params[:workout_id]).user != current_user && current_user.role != 'trainer'
+    user = Workout.find(params[:workout_id]).user
+    if user != current_user && current_user.role != 'trainer'
       flash[:notice] = "Only workouts you created are viewable and/or editable"
       redirect_to workouts_path
     end

@@ -8,6 +8,10 @@ class Trainer::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @workouts = Workout.where(user: @user).page(params[:page]).per(10)
-    @completeds = Completed.where(user: @user).where('created_at > ?', 30.days.ago)
+    @completeds = Completed.where(
+      'user_id = ? and created_at > ?',
+      @user,
+      30.days.ago
+    )
   end
 end
