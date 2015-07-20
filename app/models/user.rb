@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :workouts
+  has_many :completeds
 
   validates :fullname, presence: true
   validates :fullname, length: { in: 3..30 }

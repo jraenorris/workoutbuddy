@@ -1,0 +1,24 @@
+<h1>Completed Workouts</h1>
+(last 30 days only)
+<% if @completeds.empty? %>
+  You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %> to pick a workout to complete!
+<% else %>
+  <table class="full-width">
+    <thead>
+      <tr>
+        <th>Workout</th>
+        <th>Date completed</th>
+      </tr>
+    </thead>
+    <% @completeds.each do |completed| %>
+      <tr>
+        <% if Workout.where(id: completed.workout_id).empty? %>
+          <td><%= completed.workout_name %></td>
+        <% else %>
+          <td><%= link_to completed.workout_name, workout_path(completed.workout_id) %></td>
+        <% end %>
+        <td><%= completed.created_at.strftime("%b %d") %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

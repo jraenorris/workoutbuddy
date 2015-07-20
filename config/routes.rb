@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   namespace :trainer do
     resources :users, only: [:index, :show]
   end
+
+  resources :completeds, only: [:index, :create]
 end

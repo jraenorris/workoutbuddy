@@ -5,6 +5,38 @@
   </div>
 </div>
 
+
+<div class="row">
+  <div class="medium-8 medium-offset-2 custom-container container">
+    <% if @completeds.empty? %>
+        <p>
+          <%= @user.fullname %> has not completed any workouts in the last 30 days.
+        </p>
+
+    <% else %>
+      <table class="full-width">
+        <thead>
+          <tr>
+            <th>Workout</th>
+            <th>Date completed</th>
+          </tr>
+        </thead>
+        <% @completeds.each do |completed| %>
+          <tr>
+            <% if Workout.where(id: completed.workout_id).empty? %>
+              <td><%= completed.workout_name %></td>
+            <% else %>
+              <td><%= link_to completed.workout_name, workout_path(completed.workout_id) %></td>
+            <% end %>
+            <td><%= completed.created_at.strftime("%b %d") %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+
 <% if @workouts.empty? %>
   <div class="row">
     <div class="medium-8 medium-offset-2 custom-container container">

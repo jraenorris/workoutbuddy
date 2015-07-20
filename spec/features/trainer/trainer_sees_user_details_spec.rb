@@ -6,9 +6,9 @@ feature 'trainer sees user list', %{
   So I can find my trainees
 } do
   # Acceptance Criteria
-  # [] I must be signed in with a trainer account
-  # [] I recieve an error if I try to view the page and am not signed in
-  # [] Details page should have workout names & descriptions, paginated
+  # [x] I must be signed in with a trainer account
+  # [x] I recieve an error if I try to view the page and am not signed in
+  # [x] Details page should have workout names & descriptions, paginated
 
   let!(:trainer) { FactoryGirl.create(:user, role: 'trainer') }
   let!(:user) { FactoryGirl.create(:user) }
