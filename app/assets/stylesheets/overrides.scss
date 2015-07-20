@@ -194,9 +194,19 @@ table {
 
 .icon-edit {
   font-size: 30px;
+
   a:hover {
     color: $accent;
   }
+}
+
+.submit-exercise a {
+  font-size: 50px;
+  color: $accent;
+}
+
+.fa-check:before  {
+  color: $white;
 }
 
 .orange {

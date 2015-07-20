@@ -34,8 +34,8 @@
       </table>
     </div>
   </div>
+  <div class="submit-exercise">
+    <p>Mark as completed:</p>
+    <%= link_to fa_stacked_icon("check", base: 'star'), completeds_path(workout_id: @workout, workout_name: @workout.name), method: :post, class: 'submit-completed' %>
+  </div>
 <% end %>
-
-<div class="submit-exercise">
-  <%= link_to fa_icon("pencil"), completeds_path(workout_id: @workout, workout_name: @workout.name), method: :post, class: 'submit-completed' %>
-</div>

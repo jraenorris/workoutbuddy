@@ -7,7 +7,7 @@ feature 'user submits completed workout', %Q{
 } do
 
   # Acceptance Criteria:
-  #  [] I can click a button when I complete an exercise on the show page
+  #  [x] I can click a button when I complete an exercise on the show page
   #  [] Once clicked, I can go to my completed workouts index page and see all
   #  the workouts I've completed in the past 30 days
   #  [] My trainer can also see the workouts I've completed on my show page
@@ -16,6 +16,7 @@ feature 'user submits completed workout', %Q{
   let!(:user) { FactoryGirl.create(:user) }
   let!(:trainer) { FactoryGirl.create(:user, role: 'trainer') }
   let!(:workout) { FactoryGirl.create(:workout, user: user) }
+  let!(:exercise) { FactoryGirl.create(:exercise, workout: workout) }
 
   scenario 'user clicks completed button and sees workout on completed#index' do
     sign_in_as(user)
