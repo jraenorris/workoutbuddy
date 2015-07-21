@@ -17,13 +17,18 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.new(workout_params)
-    @workout.user = current_user
+    @workout.user ||= current_user
     if @workout.save
       flash[:success] = "Workout created! Add some excercises!"
-      redirect_to workout_path(@workout)
+      redirect_to edit_workout_path(@workout)
     else
       flash[:notice] = @workout.errors.full_messages.join(". ")
-      render :new
+      if @workout.user == current_user
+        render :new
+      else
+        @users = User.all.map { |user| [user.fullname, user.id] }
+        render 'sendworkout/new'
+      end
     end
   end
 
@@ -55,7 +60,7 @@ class WorkoutsController < ApplicationController
   end
 
   def not_user_redirect
-    if @workout.user != current_user
+    if @workout.user != current_user && current_user.role != 'trainer'
       flash[:notice] = "Only workouts you created are viewable and/or editable"
       redirect_to workouts_path
     end
@@ -64,6 +69,6 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:name, :description, :user)
+    params.require(:workout).permit(:name, :description, :user, :user_id)
   end
 end
