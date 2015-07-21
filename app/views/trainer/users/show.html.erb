@@ -58,7 +58,7 @@
         <% @workouts.each do |workout| %>
           <tr>
             <td>
-              <div><%= workout.name %></div>
+              <div><%= link_to "#{workout.name}", workout_path(workout) %></div>
             </td>
             <td>
               <div><%= workout.description %></div>
