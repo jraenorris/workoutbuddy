@@ -16,3 +16,22 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+// on click
+$('.submit-new-exercise').on('click', function(event) {
+  event.preventDefault();
+  var url = $('form#new_exercise')[0].action
+  var workoutTable = $(this).parent().find('.workout-edit-page');
+  $.ajax({
+    type: 'POST',
+    url: url,
+    dataType: 'json',
+    data: JSON.stringify({activity: $('#exercise_activity').val(), intensity: $('#exercise_intensity').val()}),
+    success: function(response) {
+      debugger;
+      workoutTable.text(response);
+    },
+    error: function() {
+      debugger;
+    }
+  });
+});

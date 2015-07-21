@@ -18,10 +18,10 @@
 
 
 <div class="row">
-  <div class="medium-8 medium-offset-2 custom-container container">
+  <div class="medium-8 medium-offset-2 custom-container container workout-edit-page">
     <h4>Exercises for <%= @workout.name %></h4>
     <% unless @exercises.empty? %>
-    <table class="full-width exercises-table-edit-page">
+    <table class="full-width exercises-table-edit-page" id="">
         <thead>
           <tr>
             <th>Edit</th>
@@ -73,7 +73,7 @@
         <%= f.label "Intensity" %>
         <%= f.text_field :intensity %>
 
-        <%= f.submit "Add to workout", class: "button tiny round" %>
+        <%= f.submit "Add to workout", class: "button tiny round submit-new-exercise" %>
       <% end %>
     </div>
   </div>

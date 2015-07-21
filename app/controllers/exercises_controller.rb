@@ -7,12 +7,18 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.new(exercise_params)
     @exercise.workout = @workout
     @exercises = Exercise.where(workout: params[:id])
-    if @exercise.save
-      flash[:success] = "Exercise added to #{@workout.name}!"
-      redirect_to edit_workout_path(@workout)
-    else
-      flash[:notice] = @exercise.errors.full_messages.join(". ")
-      render 'workouts/edit'
+    respond_to do |format|
+      if @exercise.save
+        binding.pry
+        format.html {
+          flash[:success] = "Exercise added to #{@workout.name}!"
+        }
+        format.json { render nil }
+      else
+        binding.pry
+        flash[:notice] = @exercise.errors.full_messages.join(". ")
+        render 'workouts/edit'
+      end
     end
   end
 
@@ -53,6 +59,12 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-    params.require(:exercise).permit(:workout_id, :activity, :intensity)
+    if params['activity']
+      params.require(:exercise).permit(:workout_id, :activity, :intensity)
+    else
+      param_hash = JSON.parse(params.keys[0])
+      param_hash[:workout_id] = params[:workout_id]
+      param_hash
+    end
   end
 end
