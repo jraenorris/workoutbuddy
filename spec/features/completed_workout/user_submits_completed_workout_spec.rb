@@ -8,10 +8,10 @@ feature 'user submits completed workout', %{
 
   # Acceptance Criteria:
   #  [x] I can click a button when I complete an exercise on the show page
-  #  [] Once clicked, I can go to my completed workouts index page and see all
+  #  [x] Once clicked, I can go to my completed workouts index page and see all
   #  the workouts I've completed in the past 30 days
-  #  [] My trainer can also see the workouts I've completed on my show page
-  #  [] Only myself and my trainer can see my completed workouts
+  #  [x] My trainer can also see the workouts I've completed on my show page
+  #  [x] Only myself and my trainer can see my completed workouts
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:trainer) { FactoryGirl.create(:user, role: 'trainer') }

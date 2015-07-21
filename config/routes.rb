@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
   end
 
+  resources :sendworkout, only: [:new, :create]
+
   resources :completeds, only: [:index, :create]
 end

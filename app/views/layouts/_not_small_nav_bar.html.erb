@@ -2,11 +2,16 @@
   <section class="top-bar-section title-area">
     <ul class="right">
       <%- if current_user -%>
-        <li><%= link_to "Your Workouts", workouts_path %></li>
-        <li><%= link_to "Completed Workouts", completeds_path %></li>
-        <li><%= link_to "Create Your New Workout", new_workout_path %></li>
+        <li><%= link_to "Workout List", workouts_path %></li>
         <% if current_user.role == 'trainer' %>
-          <li><%= link_to "View User List", trainer_users_path %></li>
+          <li><%= link_to "Completed", completeds_path %></li>
+          <li><%= link_to "Create New", new_sendworkout_path %></li>
+        <% else %>
+          <li><%= link_to "Create New", new_workout_path %></li>
+          <li><%= link_to "Completed", completeds_path %></li>
+        <% end %>
+        <% if current_user.role == 'trainer' %>
+          <li><%= link_to "User List", trainer_users_path %></li>
         <% end %>
         <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
