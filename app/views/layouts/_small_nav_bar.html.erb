@@ -1,12 +1,12 @@
 <% if current_user %>
   <nav class="tab-bar sticky show-for-small-only">
     <section class="tab-bar-section add-padding">
-      <% if current_user.role == 'trainer' %>
-        <%= link_to "User list", trainer_users_path %>
-      <% else %>
+      <% if current_user.role != 'trainer' %>
         <%= link_to "Workouts", workouts_path %>
-        <%= link_to "Competed", completeds_path %>
+        <%= link_to "Completed", completeds_path %>
         <%= link_to "Create", new_workout_path %>
+      <% else %>
+        <%= link_to "User list", trainer_users_path %>
       <% end %>
     </section>
     <section class="right-small">
