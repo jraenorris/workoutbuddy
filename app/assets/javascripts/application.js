@@ -19,11 +19,11 @@ $(function(){ $(document).foundation(); });
 // on click
 $('.submit-new-exercise').on('click', function(event) {
   event.preventDefault();
-  var url = $('form#new_exercise')[0].action
+  var url = $('form#new_exercise')[0].action;
   var workoutTable = $('.exercises-table-edit-page');
   var lastRow = $('.exercises-table-list');
   var noticeWrapper = $('#notice_wrapper');
-  var flashMessage = $('.notice')
+  var flashMessage = $('.notice');
   $.ajax({
     type: 'POST',
     url: url,
@@ -35,22 +35,22 @@ $('.submit-new-exercise').on('click', function(event) {
       flashMessage.addClass('hide');
       lastRow.append('<tr>' +
         '<td class="icon-edit">' +
-          '<a href="/workout/' + response['workout_id'] +'/exercise/' +
-          response['id'] + '/edit" class="edit-icon">' +
+          '<a href="/workout/' + response.workout_id +'/exercise/' +
+          response.id + '/edit" class="edit-icon">' +
             '<i class="fa fa-pencil"></i>' +
           '</a>' +
         '</td>' +
         '<td class="icon-edit">' +
           '<a class="delete-icon" data-confirm=' +
           '"Are you sure you want to delete this exercise?" rel="nofollow"' +
-          'data-method="delete" href="/workouts/' + response['workout_id'] +
-          '/exercises/' + response['id'] + '">' +
+          'data-method="delete" href="/workouts/' + response.workout_id +
+          '/exercises/' + response.id + '">' +
             '<i class="fa fa-times"></i>' +
           '</a>' +
         '</td>' +
         '<td>' +
-          '<div class="exercise-type">' + response['activity'] + '</div>' +
-          '<div class="exercise-intensity">' + response['intensity'] + '</div>'+
+          '<div class="exercise-type">' + response.activity + '</div>' +
+          '<div class="exercise-intensity">' + response.intensity + '</div>'+
         '</td>' +
       '</tr>');
       $('#exercise_activity').val('');
@@ -61,7 +61,7 @@ $('.submit-new-exercise').on('click', function(event) {
     error: function(response) {
       flashMessage.addClass('hide');
       noticeWrapper.append('<div class="flash flash-error"><p class="notice">' +
-        response['responseText'] + '</p></div>'
+        response.responseText + '</p></div>'
       );
       $(window).scrollTop(0);
     },
