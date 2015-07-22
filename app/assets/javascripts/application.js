@@ -20,18 +20,38 @@ $(function(){ $(document).foundation(); });
 $('.submit-new-exercise').on('click', function(event) {
   event.preventDefault();
   var url = $('form#new_exercise')[0].action
-  var workoutTable = $(this).parent().find('.workout-edit-page');
+  var workoutTable = $('.exercises-table-edit-page');
+  var lastRow = $('.exercises-table-list');
   $.ajax({
     type: 'POST',
     url: url,
     dataType: 'json',
-    data: JSON.stringify({activity: $('#exercise_activity').val(), intensity: $('#exercise_intensity').val()}),
+    data: JSON.stringify({activity: $('#exercise_activity').val(),
+      intensity: $('#exercise_intensity').val()}),
     success: function(response) {
-      debugger;
-      workoutTable.text(response);
+      workoutTable.removeClass('hide');
+      lastRow.append('<tr>' +
+        '<td class="icon-edit">' +
+          '<a href="/workout/' + response['workout_id'] +'/exercise/' +
+          response['id'] + '/edit" class="edit-icon">' +
+            '<i class="fa fa-pencil"></i>' +
+          '</a>' +
+        '</td>' +
+        '<td class="icon-edit">' +
+          '<a class="delete-icon" data-confirm=' +
+          '"Are you sure you want to delete this exercise?" rel="nofollow"' +
+          'data-method="delete" href="/workouts/' + response['workout_id'] +
+          '/exercises/' + response['id'] + '">' +
+            '<i class="fa fa-times"></i>' +
+          '</a>' +
+        '</td>' +
+        '<td>' +
+          '<div class="exercise-type">' + response['activity'] + '</div>' +
+          '<div class="exercise-intensity">' + response['intensity'] + '</div>'+
+        '</td>' +
+      '</tr>');
+      $('#exercise_activity').val('');
+      $('#exercise_intensity').val('');
     },
-    error: function() {
-      debugger;
-    }
   });
 });

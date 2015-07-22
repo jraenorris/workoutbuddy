@@ -15,18 +15,16 @@ feature 'user adds an exercise', %{
   # [] I must be presented with errors if I leave an invalid exercise
   # [] If all is good, I get a successfully submitted message
 
-  let(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:workout) { FactoryGirl.create(:workout, user: user) }
   let!(:user2) { FactoryGirl.create(:user) }
 
   context "user is signed in" do
-    scenario 'user adds a valid exercise from workout detail page' do
+    scenario 'user adds a valid exercise from workout detail page', js: true do
       sign_in_as(user)
       visit workout_path(workout)
 
-      within(".top-bar-section .hide-for-small") do
         click_link "Edit"
-      end
 
       expect(page).to have_content("following this example")
 
@@ -35,7 +33,8 @@ feature 'user adds an exercise', %{
 
       click_button 'Add to workout'
 
-      expect(page).to have_content("Exercise added to #{workout.name}!")
+binding.pry
+      expect(page).to have_content("Exercise added to your workout")
       expect(page).to have_content("Sit ups for 30 seconds")
     end
 

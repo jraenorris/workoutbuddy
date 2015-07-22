@@ -9,13 +9,11 @@ class ExercisesController < ApplicationController
     @exercises = Exercise.where(workout: params[:id])
     respond_to do |format|
       if @exercise.save
-        binding.pry
         format.html {
           flash[:success] = "Exercise added to #{@workout.name}!"
         }
-        format.json { render nil }
+        format.json { render json: @exercise }
       else
-        binding.pry
         flash[:notice] = @exercise.errors.full_messages.join(". ")
         render 'workouts/edit'
       end
