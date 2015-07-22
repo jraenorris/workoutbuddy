@@ -22,6 +22,8 @@ $('.submit-new-exercise').on('click', function(event) {
   var url = $('form#new_exercise')[0].action
   var workoutTable = $('.exercises-table-edit-page');
   var lastRow = $('.exercises-table-list');
+  var noticeWrapper = $('#notice_wrapper');
+  var flashMessage = $('.notice')
   $.ajax({
     type: 'POST',
     url: url,
@@ -30,6 +32,7 @@ $('.submit-new-exercise').on('click', function(event) {
       intensity: $('#exercise_intensity').val()}),
     success: function(response) {
       workoutTable.removeClass('hide');
+      flashMessage.addClass('hide');
       lastRow.append('<tr>' +
         '<td class="icon-edit">' +
           '<a href="/workout/' + response['workout_id'] +'/exercise/' +
@@ -52,6 +55,15 @@ $('.submit-new-exercise').on('click', function(event) {
       '</tr>');
       $('#exercise_activity').val('');
       $('#exercise_intensity').val('');
+      noticeWrapper.append('<div class="flash flash-success">' +
+        '<p class="notice">Exercise added to your workout</p></div>');
+    },
+    error: function(response) {
+      flashMessage.addClass('hide');
+      noticeWrapper.append('<div class="flash flash-error"><p class="notice">' +
+        response['responseText'] + '</p></div>'
+      );
+      $(window).scrollTop(0);
     },
   });
 });

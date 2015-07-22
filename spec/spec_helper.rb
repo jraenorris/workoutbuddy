@@ -2,9 +2,9 @@
 def sign_in_as(user)
   visit root_path
   # save_and_open_page
-  # within(".add-padding") do
+  within(".hide-for-small") do
     click_link "Sign In"
-  # end
+  end
   fill_in 'Email', with: user.email
   fill_in 'Password', with: user.password
   click_button 'Log in'

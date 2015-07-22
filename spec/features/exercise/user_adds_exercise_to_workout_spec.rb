@@ -33,12 +33,11 @@ feature 'user adds an exercise', %{
 
       click_button 'Add to workout'
 
-binding.pry
       expect(page).to have_content("Exercise added to your workout")
       expect(page).to have_content("Sit ups for 30 seconds")
     end
 
-    scenario 'user adds an invalid exercise' do
+    scenario 'user adds an invalid exercise', js: true do
       sign_in_as(user)
       visit edit_workout_path(workout)
 

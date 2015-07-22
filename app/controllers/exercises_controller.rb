@@ -14,8 +14,10 @@ class ExercisesController < ApplicationController
         }
         format.json { render json: @exercise }
       else
-        flash[:notice] = @exercise.errors.full_messages.join(". ")
-        render 'workouts/edit'
+        format.html {
+          flash[:notice] = @exercise.errors.full_messages.join(". ")
+        }
+        format.json { render json: @exercise.errors.full_messages.join(". ") }
       end
     end
   end
