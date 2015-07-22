@@ -70,22 +70,20 @@ $('.submit-new-exercise').on('click', function(event) {
   });
 });
 
-
-// 
-// $('.submit-new-exercise').on('click', function(event) {
-//   event.preventDefault();
-//   var url = $('form#new_exercise')[0].action;
-//   var workoutTable = $('.exercises-table-edit-page');
+$('.exercises-table-list div.delete-icon').on('click', function(event) {
+  event.preventDefault();
+debugger;
+  var url = $('form#new_exercise')[0].action;
+  var workoutTable = $('.exercises-table-edit-page');
 //   var lastRow = $('.exercises-table-list');
-//   var noticeWrapper = $('#notice_wrapper');
-//   var flashMessage = $('.notice');
-//   $.ajax({
-//     type: 'POST',
-//     url: url,
-//     dataType: 'json',
-//     data: JSON.stringify({activity: $('#exercise_activity').val(),
-//       intensity: $('#exercise_intensity').val()}),
-//     success: function(response) {
+  var noticeWrapper = $('#notice_wrapper');
+  var flashMessage = $('.notice');
+  $.ajax({
+    type: 'DELETE',
+    url: url,
+    dataType: 'json',
+    data: JSON.stringify({id: $('#id').val()),
+    success: function(response) {
 //       workoutTable.removeClass('hide');
 //       flashMessage.addClass('hide');
 //       lastRow.append('<tr>' +
@@ -121,6 +119,6 @@ $('.submit-new-exercise').on('click', function(event) {
 //       $('body').animate({
 //         scrollTop: 0
 //       }, 1000);
-//     },
-//   });
-// });
+    },
+  });
+});
