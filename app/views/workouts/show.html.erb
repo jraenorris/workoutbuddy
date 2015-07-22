@@ -1,7 +1,7 @@
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
     <h1><%= @workout.name %></h1>
-    <% if current_user.role = 'trainer' %>
+    <% if current_user.role == 'trainer' %>
       <p>Workout for: <%= @workout.user.fullname %></p>
     <% end %>
     <p><%= @workout.description %></p>

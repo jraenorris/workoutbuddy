@@ -1,7 +1,7 @@
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
   <h4>Edit Workout Info
-  <% if current_user.role = 'trainer' %>
+  <% if current_user.role == 'trainer' %>
     for <%= @workout.user.fullname %>
   <% end %>
   :</h4>
