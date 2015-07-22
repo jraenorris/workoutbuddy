@@ -6,4 +6,12 @@ class Workout < ActiveRecord::Base
   validates :name, presence: true, length: { in: 4..50 }
   validates :description, presence: true, length: { in: 15..250 }
   validates :user, presence: true
+
+  def visible_table?
+    if exercises.any?
+      ''
+    else
+      'hide'
+    end
+  end
 end

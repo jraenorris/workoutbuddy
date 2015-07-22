@@ -1,7 +1,8 @@
 
 def sign_in_as(user)
   visit root_path
-  within(".show-for-small-only") do
+  # save_and_open_page
+  within(".hide-for-small") do
     click_link "Sign In"
   end
   fill_in 'Email', with: user.email
