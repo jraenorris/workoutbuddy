@@ -37,7 +37,7 @@ feature 'user updates their exercise', %{
       expect(page).to have_content('Your exercise has been updated')
     end
 
-    scenario 'an authenticated user updates their exercise invalidly' do
+    scenario 'a user updates their exercise invalidly' do
       sign_in_as(user)
 
       visit edit_workout_path(workout)

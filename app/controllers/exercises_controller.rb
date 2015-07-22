@@ -59,7 +59,7 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-    if params['activity']
+    if params['exercise']
       params.require(:exercise).permit(:workout_id, :activity, :intensity)
     else
       param_hash = JSON.parse(params.keys[0])
