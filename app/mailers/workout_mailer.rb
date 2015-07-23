@@ -3,7 +3,7 @@ class WorkoutMailer < ApplicationMailer
     @workout = workout
 
     mail(
-      to: workout.user.email,
+      to: @workout.user.email,
       subject: "A trainer created a new workout for you!"
     )
   end
