@@ -1,7 +1,5 @@
-
 def sign_in_as(user)
   visit root_path
-  # save_and_open_page
   within(".hide-for-small") do
     click_link "Sign In"
   end
