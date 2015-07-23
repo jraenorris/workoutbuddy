@@ -17,7 +17,7 @@ class CompletedsController < ApplicationController
       user: current_user
     )
     if @completed.save
-      #send email to trainer
+      # send email to trainer
       flash[:success] = "Great job completing your workout!"
       redirect_to completeds_path
     else

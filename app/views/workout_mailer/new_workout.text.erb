@@ -1,5 +1,6 @@
 Hey <%= @workout.user.fullname %>,
 
-A trainer has sent you a new workout to accomplish called <%= workout.name %>
+A trainer has sent you a new workout to accomplish called <%= @workout.name %>
 
-<%= link_to "Check it out here!", workout_path(@workout) %>
+Go to your app to check it out!
+https://workoutpartner.herokuapp.com/workouts/<%= @workout.id %>

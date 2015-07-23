@@ -1,0 +1,9 @@
+<p>Hey <%= @workout.user.fullname %>,</p>
+
+<p>A trainer has sent you a new workout to accomplish called
+<%= @workout.name %></p>
+
+<p><a href="workouts/<%= @workout.id %>">
+  Click here to go to the workout page!</a>
+  Or copy the following:
+  https://workoutpartner.herokuapp.com/workouts/<%= @workout.id %></p>

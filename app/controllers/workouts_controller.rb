@@ -19,7 +19,9 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new(workout_params)
     @workout.user ||= current_user
     if @workout.save
-      # WorkoutMailer.new_workout(@workout).deliver_later
+      if current_user.role = "trainer"
+        WorkoutMailer.new_workout(@workout).deliver_later
+      end
       flash[:success] = "Workout created! Add some excercises!"
       redirect_to edit_workout_path(@workout)
     else
