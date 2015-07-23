@@ -20,6 +20,7 @@ class WorkoutsController < ApplicationController
     @workout.user ||= current_user
     if @workout.save
       if current_user.role = "trainer"
+        binding.pry
         WorkoutMailer.new_workout(@workout).deliver_later
       end
       flash[:success] = "Workout created! Add some excercises!"
