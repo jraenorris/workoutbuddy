@@ -7,9 +7,8 @@ feature 'user registers', %{
 } do
 
   # Acceptance Criteria:
-  # * I must specify a valid email address,
-  #   password, and password confirmation
-  # * If I don't specify the required information, I am presented with
+  # [x] I must specify a valid email, password, and password confirmation
+  # [x] If I don't specify the required information, I am presented with
   #   an error message
 
   scenario 'provide valid registration information' do
