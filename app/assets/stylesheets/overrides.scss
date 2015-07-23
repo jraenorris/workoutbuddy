@@ -177,6 +177,7 @@ table.center {
 
 p.notice {
   background-color: $accent;
+  padding: 5px 5px 2px 15px;
 }
 
 .flash-alert {
@@ -211,4 +212,7 @@ table {
 
 .orange {
   color: $accent;
+}
+ul.off-canvas-list li a:hover {
+  color: $white;
 }
