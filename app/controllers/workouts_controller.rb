@@ -11,6 +11,7 @@ class WorkoutsController < ApplicationController
     @exercises = Exercise.where(workout: params[:id])
   end
 
+
   def new
     @workout = Workout.new
   end
