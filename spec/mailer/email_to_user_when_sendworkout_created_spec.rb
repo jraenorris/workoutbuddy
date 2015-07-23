@@ -9,7 +9,7 @@ feature 'user recieves an email when a trainer sends them a workout', %{
   # Acceptance Criteria
   # [x] Mailer deliveries count should equal 1 when a workout is created
 
-  config.before :each do
+  before :each do
     ActionMailer::Base.deliveries.clear
   end
 
