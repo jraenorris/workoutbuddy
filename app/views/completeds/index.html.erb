@@ -1,8 +1,9 @@
 <h1>Completed Workouts</h1>
-(last 30 days only)
 <% if @completeds.empty? %>
-  You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %> to pick a workout to complete!
+  <p>You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %>
+    to pick a workout to complete!</p>
 <% else %>
+(last 30 days only)
   <table class="full-width">
     <thead>
       <tr>
