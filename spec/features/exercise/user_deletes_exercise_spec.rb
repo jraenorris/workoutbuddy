@@ -6,12 +6,12 @@ feature 'user deletes their exercise', %{
   Because I no longer want that exercise in the workout
 } do
 
-  # [] I must be signed in
-  # [] I can only delete my own reviews
-  # [] I delete by clicking on the delete button in the workout edit page
-  # [] I am prompted to confirm the deletion
-  # [] I get a successfully deleted message
-  # [] I no longer see my exercise on the workout edit page
+  # [x] I must be signed in
+  # [x] I can only delete my own reviews
+  # [x] I delete by clicking on the delete button in the workout edit page
+  # [x] I am prompted to confirm the deletion
+  # [x] I get a successfully deleted message
+  # [x] I no longer see my exercise on the workout edit page
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:workout) { FactoryGirl.create(:workout, user: user) }

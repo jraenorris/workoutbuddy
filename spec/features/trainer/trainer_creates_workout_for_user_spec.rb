@@ -6,10 +6,10 @@ feature 'trainer submits workout for user', %{
   So they can have a new workout to accomplish
 } do
   # Acceptance Criteria
-  # [] I must be signed in with a trainer account
-  # [] I must recieve errors if I submit invalid workout information
-  # [] I must be able to select which user the workout will be made for
-  # [] Creating a workout brings me to the edit page for that workout
+  # [x] I must be signed in with a trainer account
+  # [x] I must recieve errors if I submit invalid workout information
+  # [x] I must be able to select which user the workout will be made for
+  # [x] Creating a workout brings me to the edit page for that workout
 
   let!(:trainer) { FactoryGirl.create(:user, role: 'trainer') }
   let!(:user) { FactoryGirl.create(:user) }

@@ -11,9 +11,9 @@ feature 'user adds an exercise', %{
   # [x] If user is not signed in, user will be prompted to sign in
   # [x] If a user tries to add to a workout that isn't there, an error will show
   # [x] My exercise must include a type and intensity, like the example
-  # [] When I submit my exercise, I can see it on the workout's detail page
-  # [] I must be presented with errors if I leave an invalid exercise
-  # [] If all is good, I get a successfully submitted message
+  # [x] When I submit my exercise, I can see it on the workout's detail page
+  # [x] I must be presented with errors if I leave an invalid exercise
+  # [x] If all is good, I get a successfully submitted message
 
   let!(:user) { FactoryGirl.create(:user) }
   let!(:workout) { FactoryGirl.create(:workout, user: user) }
