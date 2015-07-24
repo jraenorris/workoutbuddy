@@ -50,7 +50,7 @@ class WorkoutsController < ApplicationController
     else
       flash[:notice] = @workout.errors.full_messages.join(". ")
       @exercise = Exercise.new
-      @exercises = Exercise.where(workout: params[:id])
+      @exercises = @workout.exercises
       render :edit
     end
   end

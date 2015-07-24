@@ -216,3 +216,25 @@ table {
 ul.off-canvas-list li a:hover {
   color: $white;
 }
+
+.workout-container {
+  height: 10px;
+  width: 100%;
+}
+
+.status-boxes {
+  display: inline-block;
+  width: 3%;
+  height: 10px;
+  margin: 0;
+  padding-right: 0;
+  padding: 0;
+  margin-right: -5px;
+}
+.workout-status {
+  background-color: $accent;
+}
+
+.non-workout-status {
+  background-color: $white;
+}

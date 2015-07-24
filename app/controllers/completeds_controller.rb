@@ -6,7 +6,10 @@ class CompletedsController < ApplicationController
       'user_id = ? and created_at > ?',
       current_user,
       30.days.ago
-    )  end
+    )
+    @workouts = workout_frequency(current_user)
+    @non_workouts = 30 - @workouts
+  end
 
   def create
     @workout_id = Workout.find_by(id: params[:workout_id])
@@ -17,7 +20,6 @@ class CompletedsController < ApplicationController
       user: current_user
     )
     if @completed.save
-      # send email to trainer
       flash[:success] = "Great job completing your workout!"
       redirect_to completeds_path
     else

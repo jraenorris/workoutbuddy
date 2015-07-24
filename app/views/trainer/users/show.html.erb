@@ -7,6 +7,15 @@
 
 
 <h3>Completed Workouts</h3>
+<div class='status-container full-width'>
+  <% @workouts_for_bar.times do %>
+    <div class="workout-status status-boxes"></div>
+  <% end %>
+  <% @non_workouts.times do %>
+    <div class="non-workout-status status-boxes"></div>
+  <% end %>
+</div>
+<br />
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
     <% if @completeds.empty? %>
