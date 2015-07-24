@@ -6,7 +6,7 @@ class ExercisesController < ApplicationController
     @workout = Workout.find(params[:workout_id])
     @exercise = Exercise.new(exercise_params)
     @exercise.workout = @workout
-    @exercises = Exercise.where(workout: params[:id])
+    @exercises = @workout.exercises
     respond_to do |format|
       if @exercise.save
         format.html { flash[:success] = "Exercise added to #{@workout.name}!" }
@@ -20,8 +20,8 @@ class ExercisesController < ApplicationController
 
   def edit
     not_user_redirect
-    @workout = Workout.find(params[:workout_id])
     @exercise = Exercise.find(params[:id])
+    @workout = @exercise.workout
   end
 
   def update
@@ -32,8 +32,8 @@ class ExercisesController < ApplicationController
       redirect_to workout_path(@exercise.workout)
     else
       flash[:notice] = @exercise.errors.full_messages.join(". ")
-      @workout = Workout.find(params[:workout_id])
       @exercise = Exercise.find(params[:id])
+      @workout = @exercise.workout
       render :edit
     end
   end

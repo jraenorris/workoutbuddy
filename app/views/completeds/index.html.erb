@@ -1,4 +1,13 @@
 <h1>Completed Workouts</h1>
+<div class='status-container full-width'>
+  <% @workouts.times do %>
+    <div class="workout-status status-boxes"></div>
+  <% end %>
+  <% @non_workouts.times do %>
+    <div class="non-workout-status status-boxes"></div>
+  <% end %>
+</div>
+<br />
 <% if @completeds.empty? %>
   <p>You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %>
     to pick a workout to complete!</p>
