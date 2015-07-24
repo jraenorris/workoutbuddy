@@ -225,12 +225,23 @@ ul.off-canvas-list li a:hover {
 .status-boxes {
   display: inline-block;
   width: 3%;
-  height: 10px;
+  height: 22px;
   margin: 0;
   padding-right: 0;
   padding: 0;
   margin-right: -5px;
 }
+
+.status-index {
+  color: $darkest;
+  line-height: 21px;
+  overflow: visible;
+  padding-left: 5px;
+  position: relative;
+  top: -6px;
+  z-index: 1;
+}
+
 .workout-status {
   background-color: $accent;
 }

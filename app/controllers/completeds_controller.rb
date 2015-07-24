@@ -7,8 +7,10 @@ class CompletedsController < ApplicationController
       current_user,
       30.days.ago
     )
-    @workouts = workout_frequency(current_user)
-    @non_workouts = 30 - @workouts
+    @workouts_for_bar = workout_frequency(current_user)
+    @non_workouts = 30 - @workouts_for_bar
+    @non_workouts = 30 - @workouts_for_bar
+    @percent_done = (@workouts_for_bar * 100) / 30
   end
 
   def create
