@@ -19,6 +19,9 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new(workout_params)
     @workout.user ||= current_user
     if @workout.save
+      if current_user.role = "trainer"
+        WorkoutMailer.new_workout(@workout).deliver_later
+      end
       flash[:success] = "Workout created! Add some excercises!"
       redirect_to edit_workout_path(@workout)
     else
@@ -47,7 +50,7 @@ class WorkoutsController < ApplicationController
     else
       flash[:notice] = @workout.errors.full_messages.join(". ")
       @exercise = Exercise.new
-      @exercises = Exercise.where(workout: params[:id])
+      @exercises = @workout.exercises
       render :edit
     end
   end

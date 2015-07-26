@@ -39,7 +39,7 @@
               <td class="icon-edit">
                 <%= link_to fa_icon("pencil"), edit_workout_exercise_path(@workout, exercise), class: "edit-icon" %>
               </td>
-              <td class="icon-edit">
+              <td class="icon-edit delete-icon-td">
                 <%= link_to  fa_icon("times"),  workout_exercise_path(@workout, exercise),  method: :delete, class: 'delete-icon', data: { confirm: 'Are you sure you want to delete this exercise?' } %>
               </td>
               <td>

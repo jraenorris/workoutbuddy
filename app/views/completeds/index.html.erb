@@ -1,8 +1,35 @@
 <h1>Completed Workouts</h1>
-(last 30 days only)
+<div class='status-container full-width'>
+  <% if @workouts_for_bar <= 25 %>
+    <% @workouts_for_bar.times do %>
+      <div class="workout-status status-boxes"></div>
+    <% end %>
+    <div class="non-workout-status status-boxes status-index">
+      <%= @percent_done %>%
+    </div>
+    <% (@non_workouts - 1).times do %>
+      <div class="non-workout-status status-boxes"></div>
+    <% end %>
+  <% else %>
+    <div class="workout-status status-boxes status-index">
+      <%= @percent_done %>%
+    </div>
+    <% (@workouts_for_bar-1).times do %>
+      <div class="workout-status status-boxes"></div>
+    <% end %>
+    <% unless @non_workouts == 0 %>
+      <% @non_workouts.times do %>
+        <div class="non-workout-status status-boxes"></div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<br />
 <% if @completeds.empty? %>
-  You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %> to pick a workout to complete!
+  <p>You have not completed any workouts in the last 30 days. <%= link_to "Click here", new_workout_path %>
+    to pick a workout to complete!</p>
 <% else %>
+(last 30 days only)
   <table class="full-width">
     <thead>
       <tr>

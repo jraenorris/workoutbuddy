@@ -7,9 +7,9 @@ feature 'user deletes a workout they created', %{
 } do
 
   # Acceptance Criteria
-  # [] - User can see delete link for their workout
-  # [] - User cannot see delete link for a workout that isnt't theirs
-  # [] - User can click on delete link and workout will no longer be indexed
+  # [x] User can see delete link for their workout
+  # [x] User cannot see delete link for a workout that isnt't theirs
+  # [x] User can click on delete link and workout will no longer be indexed
 
   let(:user) { FactoryGirl.create(:user) }
   let!(:workout) { FactoryGirl.create(:workout, user_id: user.id) }

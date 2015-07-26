@@ -177,6 +177,7 @@ table.center {
 
 p.notice {
   background-color: $accent;
+  padding: 5px 5px 2px 15px;
 }
 
 .flash-alert {
@@ -219,4 +220,41 @@ table {
   white-space: -pre-wrap;     /* Opera <7 */
   white-space: -o-pre-wrap;   /* Opera 7 */
   word-wrap: break-word;      /* IE */
+}
+
+ul.off-canvas-list li a:hover {
+  color: $white;
+}
+
+.workout-container {
+  height: 10px;
+  width: 100%;
+}
+
+.status-boxes {
+  display: inline-block;
+  width: 3%;
+  height: 22px;
+  margin: 0;
+  padding-right: 0;
+  padding: 0;
+  margin-right: -5px;
+}
+
+.status-index {
+  color: $darkest;
+  line-height: 21px;
+  overflow: visible;
+  padding-left: 5px;
+  position: relative;
+  top: -6px;
+  z-index: 1;
+}
+
+.workout-status {
+  background-color: $accent;
+}
+
+.non-workout-status {
+  background-color: $white;
 }

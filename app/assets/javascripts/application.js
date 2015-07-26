@@ -63,7 +63,61 @@ $('.submit-new-exercise').on('click', function(event) {
       noticeWrapper.append('<div class="flash flash-error"><p class="notice">' +
         response.responseText + '</p></div>'
       );
-      $(window).scrollTop(0);
+      $('body').animate({
+        scrollTop: 0
+      }, 1000);
     },
   });
 });
+
+// $('.exercises-table-list .delete-icon').on('click', function(event) {
+//   event.preventDefault();
+//   var url = $('.exercises-table-list tr td.delete-icon a').attr('href');
+//   var workoutTable = $('.exercises-table-edit-page');
+//   var noticeWrapper = $('#notice_wrapper');
+//   var flashMessage = $('.notice');
+//   $.ajax({
+//     type: 'DELETE',
+//     url: url,
+//     dataType: 'json',
+//     success: function(response) {
+//       debugger;
+//       alert("YAY");
+//       workoutTable.removeClass('hide');
+//       flashMessage.addClass('hide');
+//       lastRow.append('<tr>' +
+//         '<td class="icon-edit">' +
+//           '<a href="/workout/' + response.workout_id +'/exercise/' +
+//           response.id + '/edit" class="edit-icon">' +
+//             '<i class="fa fa-pencil"></i>' +
+//           '</a>' +
+//         '</td>' +
+//         '<td class="icon-edit">' +
+//           '<a class="delete-icon" data-confirm=' +
+//           '"Are you sure you want to delete this exercise?" rel="nofollow"' +
+//           'data-method="delete" href="/workouts/' + response.workout_id +
+//           '/exercises/' + response.id + '">' +
+//             '<i class="fa fa-times"></i>' +
+//           '</a>' +
+//         '</td>' +
+//         '<td>' +
+//           '<div class="exercise-type">' + response.activity + '</div>' +
+//           '<div class="exercise-intensity">' + response.intensity + '</div>'+
+//         '</td>' +
+//       '</tr>');
+//       $('#exercise_activity').val('');
+//       $('#exercise_intensity').val('');
+//       noticeWrapper.append('<div class="flash flash-success">' +
+//         '<p class="notice">Exercise added to your workout</p></div>');
+//     },
+//     error: function(response) {
+//       flashMessage.addClass('hide');
+//       noticeWrapper.append('<div class="flash flash-error"><p class="notice">' +
+//         response.responseText + '</p></div>'
+//       );
+//       $('body').animate({
+//         scrollTop: 0
+//       }, 1000);
+//     },
+//   });
+// });

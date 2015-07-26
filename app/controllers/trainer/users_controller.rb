@@ -13,5 +13,8 @@ class Trainer::UsersController < ApplicationController
       @user,
       30.days.ago
     )
+    @workouts_for_bar = workout_frequency(@user)
+    @non_workouts = 30 - @workouts_for_bar
+    @percent_done = (@workouts_for_bar * 100) / 30
   end
 end

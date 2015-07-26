@@ -6,6 +6,33 @@
 </div>
 
 
+<h3>Completed Workouts</h3>
+<div class='status-container full-width'>
+  <% if @workouts_for_bar <= 25 %>
+    <% @workouts_for_bar.times do %>
+      <div class="workout-status status-boxes"></div>
+    <% end %>
+    <div class="non-workout-status status-boxes status-index">
+      <%= @percent_done %>%
+    </div>
+    <% @non_workouts.times do %>
+      <div class="non-workout-status status-boxes"></div>
+    <% end %>
+  <% else %>
+    <div class="workout-status status-boxes status-index">
+      <%= @percent_done %>%
+    </div>
+    <% (@workouts_for_bar-1).times do %>
+      <div class="workout-status status-boxes"></div>
+    <% end %>
+    <% unless @non_workouts == 0 %>
+      <% @non_workouts.times do %>
+        <div class="non-workout-status status-boxes"></div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<br />
 <div class="row">
   <div class="medium-8 medium-offset-2 custom-container container">
     <% if @completeds.empty? %>
@@ -36,7 +63,7 @@
   </div>
 </div>
 
-
+<h3>All Workouts</h3>
 <% if @workouts.empty? %>
   <div class="row">
     <div class="medium-8 medium-offset-2 custom-container container">

@@ -25,3 +25,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'poltergeist'
 end
+
+group :development do
+  gem 'mailcatcher'
+end

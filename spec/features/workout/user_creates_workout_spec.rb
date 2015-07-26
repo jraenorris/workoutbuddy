@@ -6,10 +6,10 @@ feature 'user adds a new workout', %{
   So I can create a new workout
 } do
 
-  # [x] - I can navigate to the workout/new page
-  # [x] - I can create a new workout with a short description
-  # [x] - I am redirected to the workout show page w/ success message if valid
-  # [x] - I am given a failure message if invalid
+  # [x] I can navigate to the workout/new page
+  # [x] I can create a new workout with a short description
+  # [x] I am redirected to the workout show page w/ success message if valid
+  # [x] I am given a failure message if invalid
 
   let!(:workout) { FactoryGirl.build(:workout) }
   let!(:user) { FactoryGirl.create(:user) }
