@@ -2,17 +2,17 @@
 <% if @users.empty? %>
   No users in durrent database.
 <% else %>
-  <table class="full-width">
+  <table class="full-width word-wrap">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Email</th>
+        <th class="hide-for-small">Email</th>
       </tr>
     </thead>
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to "#{user.fullname}", trainer_user_path(user) %></td>
-        <td><%= user.email %></td>
+        <td th class="hide-for-small"><%= user.email %></td>
       </tr>
     <% end %>
   </table>
