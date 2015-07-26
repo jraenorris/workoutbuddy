@@ -1,12 +1,14 @@
-<%= form_for @workout do |f| %>
-  <%= f.label 'Create workout for' %>
-  <%= f.select :user_id, options_for_select(@users) %>
+<div class='padding-fifteen'>
+  <%= form_for @workout do |f| %>
+    <%= f.label 'Create workout for' %>
+    <%= f.select :user_id, options_for_select(@users) %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-  <%= f.submit "Create Workout", class: "button tiny round" %>
-<% end %>
+    <%= f.submit "Create Workout", class: "button tiny round" %>
+  <% end %>
+</div>
