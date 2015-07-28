@@ -1,24 +1,27 @@
+![Imgur](http://imgur.com/f9JazZu)
+
 ![Build Status](https://codeship.com/projects/22fb9240-0ba7-0133-8b96-265ef25499ca/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jraenorris/workoutbuddy.png)
 
-Do you find going to the gym overwhelming? Do you ever find yourself staring at
-the weights wondering which ones to pick up and put down a few times to get that
-healthy physique you've always wanted? Do you need some help organizing your
-exercises so you can get the full-body (or focused!) workout you so desire?
+<tt>http://workoutpartner.herokuapp.com/</tt>
 
-Well, look no further, my friend, WorkoutPartner is here to help!
+## About
 
-I too struggled with going to the gym and spending 45 minutes laying on the yoga
-mat wondering what I should do to get healthy. It's not that I didn't know how
-to workout, it's that I would get distracted and overstimulated by all of the
-machines and techniques to stick to a focused routine that would give me lasting
-results.
+WorkoutPartner aims to alleviate the stress of going to the gym and not knowing what to do, a major hurdle for many looking to get or stay in shape. It allows users to create workouts prior to going to the gym, and even seek help from trainers in the creation of their workouts. Progress reports encourage motivation and make tracking accomplished workouts easy.
 
-Now, with the help of WorkoutPartner, I can design a workout and set goals for
-myself when I have a few spare moments on my computer or phone, then implement
-that workout the next time I am at a park or the gym.
+## Why build WorkoutPartner?
 
-Feeling lost at the gym is a thing of the past with WorkoutPartner helping you
-plan ahead your path to getting healthy!
+The idea came about, as many do, over a few beers with a friend. While discussing my new career path with a friend who, in addition to law school, is a personal trainer. He voiced concern about how his field is often stuck in an age of having hand-written workout routines that get lost and quickly outdated. After talking with him and learning more about what would be beneficial to help support his clients, the idea of WorkoutPartner was born. The fact that the need for such an app is so obvious both for myself and for others is something that keeps me excited about it.
 
-Developed by Jesse Norris
+## Download
+```
+git clone https://github.com/jraenorris/workoutbuddy.git
+cd workoutbuddy
+bundle install
+rake db:create db:migrate
+```
+
+## To do
+ - Create tutorial for how to best navigate the site on the root page
+ - Utilize AJAX throughout more of the app to create a faster user-experience
+ - Enhance the trainer feature by allowing users to request trainer's help via email request
