@@ -1,3 +1,4 @@
+
 ![Imgur](http://i.imgur.com/f9JazZu.png)
 
 ![Build Status](https://codeship.com/projects/22fb9240-0ba7-0133-8b96-265ef25499ca/status?branch=master)
@@ -12,6 +13,18 @@ WorkoutPartner aims to alleviate the stress of going to the gym and not knowing 
 ## Why build WorkoutPartner?
 
 The idea came about, as many do, over a few beers with a friend. While discussing my new career path with a friend who, in addition to law school, is a personal trainer. He voiced concern about how his field is often stuck in an age of having hand-written workout routines that get lost and quickly outdated. After talking with him and learning more about what would be beneficial to help support his clients, the idea of WorkoutPartner was born. The fact that the need for such an app is so obvious both for myself and for others is something that keeps me excited about it.
+
+## See all your workouts - Desktop view
+![Imgur](http://i.imgur.com/U83wvPs.png)
+
+## Edit your workout and the exercises in it - Mobile view
+![Imgur](http://i.imgur.com/iFv2hOS.png)
+
+## View workout details and mark as completed - Desktop view
+![Imgur](http://i.imgur.com/fNfojRu.png)
+
+## Track workout completion - Mobile view
+![Imgur](http://i.imgur.com/vyA1pZR.png)
 
 ## Download
 ```
