@@ -1,4 +1,4 @@
-![Imgur](http://imgur.com/f9JazZu)
+![Imgur](http://i.imgur.com/f9JazZu.png)
 
 ![Build Status](https://codeship.com/projects/22fb9240-0ba7-0133-8b96-265ef25499ca/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jraenorris/workoutbuddy.png)
