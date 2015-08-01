@@ -10,14 +10,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def workout_frequency(user)
-    Completed.where(
-      'user_id = ? and created_at > ?',
-      user,
-      30.days.ago
-    ).count
-  end
-
   protected
 
   def configure_permitted_parameters
