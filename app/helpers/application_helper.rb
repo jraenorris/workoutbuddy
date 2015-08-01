@@ -1,4 +1,4 @@
-module MyCustomHelper
+module ApplicationHelper
   def will_show_nav_items_for?(action, controller)
     params[:action] == action && params[:controller] == controller
   end
