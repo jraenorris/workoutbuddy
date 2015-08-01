@@ -7,14 +7,14 @@
     <table class="full-width" style="table-layout:fixed;">
       <thead>
         <tr>
-          <th class="hide-for-small"></th>
+          <th class="hide-for-small width-icons"></th>
           <th>Workout</th>
           <th>Description</th>
         </tr>
       </thead>
       <% @workouts.each do |workout| %>
         <tr>
-          <td class="hide-for-small"><%= link_to image_tag("Delete-single.png", border: 0, size: '30x30'),  workout_path(workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %></td>
+          <td class="hide-for-small icon-edit width-icons"><%= link_to fa_icon('trash'),  workout_path(workout),  method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %></td>
           <td><%= link_to "#{workout.name}", workout_path(workout) %></td>
           <td class="break-word"><%= truncate("#{workout.description}", length: 50, separator: ' ') %></td>
         </tr>
