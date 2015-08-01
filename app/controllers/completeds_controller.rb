@@ -5,7 +5,6 @@ class CompletedsController < ApplicationController
     @completeds = Completed.last_30_days_for(current_user)
     @workouts_for_bar = @completeds.count
     @non_workouts = 30 - @workouts_for_bar
-    @non_workouts = 30 - @workouts_for_bar
     @percent_done = (@workouts_for_bar * 100) / 30
   end
 
