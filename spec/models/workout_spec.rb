@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Workout, type: :model do
+describe Workout do
   it { should have_valid(:name).when('Basic arm workout') }
   it { should have_valid(:description).when('This is the workout description') }
   it { should_not have_valid(:name).when('') }

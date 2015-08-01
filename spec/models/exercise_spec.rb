@@ -10,8 +10,8 @@ describe Exercise do
 
       workout.destroy
 
-      exercise1.should_not exist_in_database
-      exercise2.should exist_in_database
+      expect(exercise1).to_not exist_in_database
+      expect(exercise2).to exist_in_database
     end
   end
 end
